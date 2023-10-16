@@ -1,0 +1,60 @@
+/**
+  * This file is for styles exclusive for Hugo sites.
+***/
+
+/**************************
+** BGN: Translation menu **
+**************************/
+  .lang-separator {
+    font-size: 1.3em;
+  }
+  .lang-flag-large {
+    display: inline-block;
+    font-size: 1.3em;
+    height: 1em;
+    width: 1em;
+  }
+  /* .translation-active {} */
+  /* .translation-alt {} */
+  .translation-none {
+    cursor: not-allowed;
+    opacity:  .30;
+  }
+/**************************
+** END: Translation menu **
+**************************/
+
+/**********************
+** BGN: Custom Lists **
+**********************/
+  aside.partofseries ul > li::marker {
+    content: "\1F449\1F3FD\20"; /* 👉🏽 */
+  }
+/**********************
+** END: Custom Lists **
+**********************/
+
+/*******************
+** BGN: Footnotes **
+********************/
+  /*
+  sup[id^="fnref"] > a.footnote-ref {
+    background-color: #c0ffee;
+    border-radius: 10px;
+    padding: 1px 5px;
+    font-size: 0.6rem;
+  }
+  */
+  sup[id^="fnref"] > a.footnote-ref {
+    &::before {
+      content: "[";
+    }
+    &::after {
+      content: "]";
+    }
+    font-size: 0.7rem;
+    vertical-align: super;
+  }
+/*******************
+** END: Footnotes **
+********************/

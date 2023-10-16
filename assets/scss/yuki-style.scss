@@ -1,0 +1,1604 @@
+@charset "UTF-8";
+/***
+  * My personal styles and overrides
+  *
+  * Websites:
+  *   * YourOnly.One™: https://YourOnly.One
+  *
+  * Contact:
+  *   * Fediverse: https://quey.org/@techmagus | @techmagus@quey.org
+  *   * Facebook: https://fb.me/techmagus | https://m.me/techmagus
+***/
+
+/***
+  * yuki-style.css Copyright © 2003-2022 JC John Sese Cuneta
+  *
+  * Licenses: [1] MIT/Expat License; [2] MPL v2.0; [3] LGPLv3
+  *
+  * LICENSE: MIT License / Expat License
+  *   Permission is hereby granted, free of charge, to any person obtaining a copy
+  *   of this software and associated documentation files (the "Software"), to deal
+  *   in the Software without restriction, including without limitation the rights
+  *   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  *   copies of the Software, and to permit persons to whom the Software is
+  *   furnished to do so, subject to the following conditions:
+  *
+  *   The above copyright notice and this permission notice shall be included in all
+  *   copies or substantial portions of the Software.
+  *
+  *   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  *   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  *   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  *   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  *   SOFTWARE.
+  *
+  * LICENSE: Mozilla Public License Version 2.0 ("MPL 2.0")
+  *   This Source Code Form is subject to the terms of the Mozilla Public
+  *   License, v. 2.0. If a copy of the MPL was not distributed with this
+  *   file, You can obtain one at http://mozilla.org/MPL/2.0/.
+  *
+  * LICENSE: GNU LESSER GENERAL PUBLIC LICENSE Version 3 ("LGPLv3")
+  *   This program is free software: you can redistribute it and/or modify
+  *   it under the terms of the Lesser GNU General Public License as published by
+  *   the Free Software Foundation, either version 3 of the License, or
+  *   (at your option) any later version.
+  *
+  *   This program is distributed in the hope that it will be useful,
+  *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  *   Lesser GNU General Public License for more details.
+  *
+  *   You should have received a copy of the Lesser GNU General Public License
+  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+***/
+
+/***
+  * Other Attributions
+  *
+  * Embed Responsively: embedresponsively.com
+  * Fork-Awesome
+  * Twemoji
+  * Cryptocoins (webfont/svg): https://github.com/AllienWorks/cryptocoins
+***/
+
+/***
+  * Based on:
+  *
+  *   * CSS Color Module Level 4
+  *      * WD, 2016-07-05
+  *      * https://www.w3.org/TR/css-color-4/
+  *      * https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hwb
+  *      * See: hwb()
+  *   * CSS Color Module Level 3
+  *      * REC, 2018-06-19
+  *      * https://www.w3.org/TR/css-color-3/
+  *
+  *   * CSS Fonts Module Level 4
+  *      * WD, 2018-09-20
+  *      * https://www.w3.org/TR/css-fonts-4/
+  *      * See: see paninap-fonts.css
+  *   * CSS Fonts Module Level 3
+  *      * REC, 2018-09-20
+  *      * https://www.w3.org/TR/css-fonts-3/
+  *
+  *   * CSS Text Decoration Module Level 4
+  *      * WD, 2018-03-13
+  *      * https://www.w3.org/TR/css-text-decor-4/
+  *      * See: text-decoration-skip -- not using currently
+  *   * CSS Text Decoration Module Level 3
+  *      * CR, 2018-07-03
+  *      * https://www.w3.org/TR/css-text-decor-3/
+  *      * See: text-decoration property
+  *
+  *   * CSS Custom Properties for Cascading Variables Module Level 1
+  *      * CR, 2015-12-03
+  *      * https://www.w3.org/TR/css-variables/
+  *      * See: --base-sans-font and --base-serif-font, and var()
+  *
+  *   * Selectors Level 4
+  *      * WD, 2018-11-21
+  *      * https://www.w3.org/TR/selectors-4/
+  *      * See: :dir() and :lang("*-Latn")
+  *   * Selectors Level 3
+  *      * REC, 2018-11-06
+  *      * https://www.w3.org/TR/selectors-3/
+  *      * See: :root, :first-child, :last-child
+  *
+***/
+
+/***
+  * Notes:
+  *
+  * All colors must be:
+  *   * hsla()
+  *   * hwb() -- CSS Color 4, future proof
+  *
+  * CSS Logical
+  *   * https://www.w3.org/TR/css-logical-1/
+  *   * https://css-tricks.com/css-logical-properties/
+  *     * border-{block,inline}-{start,end}-{width,style,color}
+  *     * margin-{block,inline}-{start,end}
+  *     * padding-{block,inline}-{start,end}
+***/
+
+/********************
+** BGN: root stuff **
+********************/
+  :root, html {
+    /* text-decoration-skip: objects ink edges; */
+    /* text-underline-position: under; */
+  }
+/********************
+** END: root stuff **
+********************/
+
+/*************************
+** BGN: Global Settings **
+*************************/
+  :root, html, * {
+    -webkit-hyphens: none;
+        -ms-hyphens: none;
+            hyphens: none; /* Browser hyphenation algorithm is incorrect. Turn-off globally. */
+    word-wrap: break-word; /* But keep word-wrap "on" to allow wrapping of very long words. */
+  }
+  article, section,
+  header, footer,
+  details, summary {
+    content-visibility: auto;
+    contain-intrinsic-size: auto;
+  }
+  abbr {
+    cursor: help;
+  }
+/*************************
+** END: Global Settings **
+*************************/
+
+/******************************************************************************/
+/******************************************************************************/
+
+/*******************
+** BGN: OVERRIDES **
+*******************/
+  address {
+    display: inline-block;
+    font-style: normal;
+  }
+/*******************
+** END: OVERRIDES **
+*******************/
+
+/************************
+** BGN: COMMON CLASSES **
+************************/
+  /*** BGN: Alignments ***/
+    html body {
+      .grid_center.grid_center.grid_center {
+        margin-left: auto;
+        margin-right: auto;
+        -webkit-margin-start: auto;
+        margin-inline-start: auto;
+        -webkit-margin-end: auto;
+        margin-inline-end: auto;
+      }
+
+      .img_center.img_center.img_center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        -webkit-margin-start: auto;
+        margin-inline-start: auto;
+        -webkit-margin-end: auto;
+        margin-inline-end: auto;
+      }
+
+      .txt_center.txt_center.txt_center {
+        text-align: center;
+      }
+
+      .txt_left.txt_left.txt_left {
+        text-align: left;
+      }
+
+      .txt_right.txt_right.txt_right {
+        text-align: right;
+      }
+
+      .txt_justify.txt_justify.txt_justify {
+        text-align: justify;
+      }
+
+      .float_left.float_left.float_left {
+        float: left;
+      }
+
+      .float_right.float_right.float_right {
+        float: right;
+      }
+
+      figure {
+        &.float_left.float_left.float_left {
+          margin: 0 10px 5px 0;
+        }
+
+        &.float_right.float_right.float_right {
+          margin: 0 0 5px 10px;
+        }
+      }
+
+      .float_clear, .float_both_clear {
+        clear: both;
+      }
+
+      .float_left_clear {
+        clear: left;
+      }
+
+      .float_right_clear {
+        clear: right;
+      }
+    }
+  /*** END: Alignments ***/
+
+  /*** BGN: Yuki footer ***/
+    .global_footer {
+      align-items: end;
+      display: -ms-grid;
+      display: grid;
+      grid-gap: 0.35rem;
+      grid-template-areas:  "best_viewed best_viewed best_viewed"
+                            "menu_footer menu_footer menu_footer"
+                            ". cc_icons ."
+                            "ypub copyleft gfiles";
+      -ms-grid-columns: auto 0.35rem 8fr 0.35rem auto;
+      grid-template-columns: auto 8fr auto;
+      -ms-grid-rows: auto 0.35rem auto 0.35rem auto 0.35rem auto;
+      grid-template-rows: repeat(4, auto);
+
+      div {
+        &.best_viewed {
+          -ms-grid-row: 1;
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 5;
+          grid-area: best_viewed;
+          /*
+          grid-column-start: 1;
+          grid-column-end: span end;
+          grid-row: 1;
+          */
+        }
+
+        &.menu_footer {
+          -ms-grid-row: 3;
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 5;
+          grid-area: menu_footer;
+          /*
+          grid-column-start: 1;
+          grid-column-end: span end;
+          grid-row: 2;
+          */
+        }
+
+        &.cc_icons {
+          -ms-grid-row: 5;
+          -ms-grid-column: 3;
+          grid-area: cc_icons;
+          /*
+          grid-column-start: 1;
+          grid-column-end: span end;
+          grid-row: 3;
+          */
+        }
+
+        &.ypub {
+          -ms-grid-row: 7;
+          -ms-grid-column: 1;
+          grid-area: ypub;
+          /*
+          grid-row: 4;
+          justify-self: start;
+          */
+        }
+
+        &.copyleft {
+          -ms-grid-row: 7;
+          -ms-grid-column: 3;
+          grid-area: copyleft;
+          /*
+          grid-row: 4;
+          */
+        }
+
+        &.gfiles {
+          -ms-grid-row: 7;
+          -ms-grid-column: 5;
+          grid-area: gfiles;
+          /*
+          grid-row: 4;
+          justify-content: end;
+          */
+        }
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      /* HACK: hackish but this is the easiest way to update the browser versions */
+      > div.best_viewed > b {
+        &:nth-child(2) > a::after {
+          content: " 86+";
+        }
+
+        &:nth-child(4) > a::after {
+          content: " 29+";
+        }
+      }
+    }
+
+    /* Copyleft */
+    .gfiles, .copyleft {
+      -webkit-text-decoration-line: none;
+              text-decoration-line: none;
+
+      a {
+        -webkit-text-decoration-line: none;
+                text-decoration-line: none;
+      }
+    }
+  /*** END: Yuki footer ***/
+/************************
+** END: COMMON CLASSES **
+************************/
+
+/*************************
+** BGN: Ruby Annotation **
+*************************/
+  /**
+    * Sample:
+    *
+    * <ruby>
+    *   <rbc>
+    *     <rb lang="hbo-Latn">Yahuhanan</rb>
+    *     <rb lang="ja-Latn">Yukia</rb>
+    *     <rb lang="fil">Sese</rb>
+    *     <rb lang="fil">Cuneta</rb>
+    *   </rbc>
+    *   <rtc class="reading rtc_over">
+    *     <rp>(</rp><rt lang="he">יהוחנן</rt><rp>)</rp>
+    *     <rp>(</rp><rt lang="ja">雪亮</rt><rp>)</rp>
+    *     <rp>(</rp><rt lang="zh">謝</rt><rp>)</rp>
+    *   </rtc>
+    *   <rtc class="reading rtc_over">
+    *     <rt></rt>
+    *     <rp>(</rp><rt lang="ja">ゆきあ</rt><rp>)</rp>
+    *   </rtc>
+    *   <rtc class="rtc_under">
+    *     <rt></rt>
+    *     <rp>(</rp><rt lang="zh-Latn">Xuěliàng</rt><rp>)</rp>
+    *     <rp>(</rp><rt lang="zh-Latn">Xie</rt><rp>)</rp>
+    *   </rtc>
+    * </ruby>
+    *
+  **/
+
+  /**
+    * Sample #2: As of 2021-02-08 we have to use this format to ensure Ruby will render correctly in Chromium-based browsers (lack of support)
+    *
+    * NOTE: If more than one annotation (or ruby nesting), remove all whitespace after the closing </ruby>.
+    *
+    * <ruby>
+    *   <rbc>
+    *     <rb>Yahuhanan</rb>
+    *   </rbc>
+    *   <rp>(</rp><rt xml:lang="he" lang="he">יהוחנן</rt><rp>)</rp>
+    * </ruby>
+    * <ruby>
+    *   <ruby>
+    *     <ruby>
+    *       <rbc>
+    *         <rb xml:lang="ja-Latn" lang="ja-Latn">Yukia</rb>
+    *       </rbc>
+    *       <rp>(</rp><rt xml:lang="ja-Hani" lang="ja-Hani">雪亮</rt><rp>)</rp>
+    *     </ruby><rp>(</rp><rt xml:lang="ja-Hira" lang="ja-Hira">ゆきあ</rt><rp>)</rp>
+    *   </ruby><!-- <rp>(</rp><rt xml:lang="zh-Latn" lang="zh-Latn">Xuěliàng</rt><rp>)</rp> --> <!-- This should be rtc_under but the serious bug in Chromium-based browsers is blocking us from doing this correctly. -->
+    * </ruby>
+    * <ruby>
+    *   <ruby>
+    *     <rbc>
+    *       <rb xml:lang="fil" lang="fil">Sese</rb>
+    *     </rbc>
+    *     <rp>(</rp><rt xml:lang="zh" lang="zh">謝</rt><rp>)</rp>
+    *   </ruby><rp>(</rp><rt xml:lang="zh-Latn" lang="zh-Latn">Xie</rt><rp>)</rp>
+    * </ruby>
+    * <ruby>
+    *   <rbc>
+    *     <rb>Cuneta</rb>
+    *   </rbc>
+    *   <rp>(</rp><rt xml:lang="tl-Tglg" lang="tl-Tglg">ᜃᜓᜈᜒᜆ</rt><rp>)</rp>
+    * </ruby>
+  **/
+
+  /**
+    * We are declaring most of these due to lack of support in other browsers.
+    * Once CSS Ruby is fully supported, we can remove these base declarations.
+  **/
+  ruby {
+    display: ruby; /* generate a ruby container box */
+  }
+  rbc {
+    display: ruby-base-container; /* generate a ruby base container box */
+  }
+  rb {
+    display: ruby-base; /* generate a ruby base box */
+  }
+
+  /*
+    * There is a serious bug in Blink (used by Chromium-based browsers) related to the <rt> element.
+    *   - If an <rt> element has a parent other than <ruby>, Blink is failing to style it even with !important
+  */
+  rtc {
+    display: ruby-text-container; /* generate a ruby annotation container box */
+  }
+  rt {
+    display: ruby-text; /* generate a ruby annotation box */
+  }
+  ruby, rbc, rb, rtc, rt {
+    font-variant-east-asian: ruby;
+    -webkit-text-emphasis: none;
+            text-emphasis: none;
+    white-space: nowrap;
+    line-height: 1;
+    text-transform: full-size-kana;
+    ruby-align: center; /* better presentation */
+  }
+
+  /* ruby-align only applies to <rbc>, <rb>, <rtc>, and <rt> */
+  .ruby_spacearound { /* initial value, declared in case we need override */
+    ruby-align: space-around;
+  }
+  .ruby_center { /* our default for better presentation */
+    ruby-align: center;
+  }
+  .ruby_spacebetween {
+    ruby-align: space-between;
+  }
+  .ruby_start {
+    ruby-align: start;
+  }
+
+  /* ruby-position only applies to <rtc> */
+  .rtc_over {
+    ruby-position: over;
+  }
+  .rtc_under {
+    ruby-position: under;
+  }
+  .rtc_intercharacter {
+    ruby-position: inter-character;
+  }
+  .rtc_left {
+    ruby-position: left;
+  }
+  .rtc_right {
+    ruby-position: right;
+  }
+
+/*************************
+** END: Ruby Annotation **
+*************************/
+
+/*********************************************************
+** BGN: Additional styles for Fork Awesome and cc-icons **
+*********************************************************/
+  /* BGN: Sizes */
+    .fa-xs, .cc-xs { font-size: .75em; }
+    .fa-sm, .cc-sm { font-size: .875em; }
+    .fa-1x, .cc-1x { font-size: 1em; }
+    .fa-2x, .cc-2x { font-size: 2em; }
+    .fa-3x, .cc-3x { font-size: 3em; }
+    .fa-4x, .cc-4x { font-size: 4em; }
+    .fa-5x, .cc-5x { font-size: 5em; }
+    .fa-6x, .cc-6x { font-size: 6em; }
+    .fa-7x, .cc-7x { font-size: 7em; }
+    .fa-8x, .cc-8x { font-size: 8em; }
+    .fa-9x, .cc-9x { font-size: 9em; }
+    .fa-10x, .cc-10x { font-size: 10em; }
+  /* END: Sizes */
+
+  /* Remove underlines */
+  html > body .cc_icons > a {
+    text-decoration: none;
+    border-bottom: none
+  }
+/*********************************************************
+** END: Additional styles for Fork Awesome and cc-icons **
+*********************************************************/
+
+/*******************************
+** BGN: embedresponsively.com **
+*******************************/
+  /*
+   * .embed-container is too generic, causing conflicts elsewhere
+   *   Changed to .responsive_embedframe
+   *   Old: .rspnsv-embedframe
+   *
+   * <div class="responsive_embedframe"><iframe src="https://www.youtube-nocookie.com/embed/" sandbox="allow-same-origin allow-scripts" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe></div>
+   */
+  .rspnsv-embedframe, .responsive_embedframe {
+    content-visibility: auto;
+    contain-intrinsic-size: auto;
+    position: relative;
+    padding-bottom: 56.25%; /* YouTube, Vimeo, Dailymotion, Google Maps, Generic */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .rspnsv-embedframe.instagram, .responsive_embedframe.instagram {
+    padding-bottom: 120%; /* Instagram */
+  }
+
+  .rspnsv-embedframe.vine, .responsive_embedframe.vine {
+    padding-bottom: 100%; /* Vine */
+  }
+
+  .rspnsv-embedframe.gettyimages, .responsive_embedframe.gettyimages {
+    padding-bottom: 79.96632996632997%; /* Getty Images */
+  }
+
+  .rspnsv-embedframe.generic2, .responsive_embedframe.generic2 {
+    position: relative;
+    padding-bottom: initial; /* Generic2 */
+    /* height: 0; */
+    overflow: hidden;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .rspnsv-embedframe, .responsive_embedframe {
+    iframe, object, embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+/*******************************
+** END: embedresponsively.com **
+*******************************/
+
+/******************************************************************************/
+/******************************************************************************/
+
+/*******************
+** BGN: ACCORDION **
+*******************/
+  /* Usually used for FAQ and spoilers; show/hide */
+  details.style01 {
+    border: 1px solid;
+    border-radius: 7px;
+    box-shadow: 1px 1px 1px;
+    margin: 10px 0;
+    padding: 0.5em 0;
+
+    &[open] > summary {}
+
+    > {
+      summary {
+        display: list-item;
+        font-weight: bold;
+        list-style-position: inside;
+        cursor: pointer;
+        margin: 0;
+        padding: 0 0.5em;
+
+        &.faq::marker {
+          color: hsla(0deg, 100%, 50%, 1);
+          color: hwb(0deg 0% 0% / 100%);
+          content: "Q: ";
+          font-weight: bold;
+        }
+      }
+
+      div {
+        display: inline-block;
+        margin: 0.7em 0 0 0;
+        padding: 0 1.7em;
+
+        &.faq > p:first-of-type {
+          display: list-item;
+          list-style-position: inside;
+
+          &::marker {
+            color: hsla(240deg, 100%, 50%, 1);
+            color: hwb(240deg 0% 0% / 100%);
+            content: "A: ";
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  :lang(ja) details > {
+    summary.faq::marker {
+      color: hsla(0deg, 100%, 50%, 1);
+      color: hwb(0deg 0% 0% / 100%);
+      content: "質問： ";
+      font-weight: bold;
+    }
+
+    div.faq > p:first-of-type::marker {
+      color: hsla(240deg, 100%, 50%, 1);
+      color: hwb(240deg 0% 0% / 100%);
+      content: "答え： ";
+      font-weight: bold;
+    }
+  }
+
+  :lang(ko) details > {
+    summary.faq::marker {
+      color: hsla(0deg, 100%, 50%, 1);
+      color: hwb(0deg 0% 0% / 100%);
+      content: "문제: ";
+      font-weight: bold;
+    }
+
+    div.faq > p:first-of-type::marker {
+      color: hsla(240deg, 100%, 50%, 1);
+      color: hwb(240deg 0% 0% / 100%);
+      content: "답변: ";
+      font-weight: bold;
+    }
+  }
+/*******************
+** END: ACCORDION **
+*******************/
+
+/*********************
+** BGN: Attribution **
+*********************/
+  /** Notes
+    ****************************************************************************
+    * I. blockquote, code, and anything "quoted" which is directly related to the article
+    *     see: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure
+    *
+      <figure class="quote_box">
+        <blockquote>
+          <p>Long quote</p>
+          <p>Long quote</p>
+        </blockquote>
+
+        <figcaption class="attribution_name txt_right">
+          <p><cite>Source title</cite> by Author name</p>
+        </figcaption>
+      </figure>
+    ****************************************************************************
+    * II. If the image is related to the article like a gallery
+    *       * replace with <aside> as needed
+    *           * then replace figcaption with footer
+    *
+      <figure class="figure_box">
+        <div>
+          <img loading="lazy" src="image.webp">
+          <img loading="lazy" src="image.webp">
+        </div>
+
+        <figcaption class="attribution_caption txt_center">
+          <p><small>Image attribution</small></p>
+        </figcaption>
+      </figure>
+    ****************************************************************************
+    * III. If the image is not related to the article
+    *
+      <div class="figure_box">
+        <div>
+          <img loading="lazy" src="image.webp">
+          <img loading="lazy" src="image.webp">
+        </div>
+
+        <footer class="attribution_caption txt_center">
+          <p><small>Image attribution</small></p>
+        </footer>
+      </div>
+    ****************************************************************************
+    * IV. Header image/video attribution
+    *
+      <div class="header_attribution">
+        <footer class="attribution_caption">
+          <p><small>Image attribution</small></p>
+        </footer>
+      </div>
+    ****************************************************************************
+  **/
+  html body {
+    .quote_box, .figure_box {
+      content-visibility: auto;
+      contain-intrinsic-size: auto;
+    }
+
+    /* BGN: Remove browser and theme styles */
+      figure.quote_box.quote_box.quote_box, aside.quote_box.quote_box.quote_box, div.quote_box.quote_box.quote_box,
+      aside.figure_box, div.figure_box,
+      .attribution_name > p, .attribution_copyright > p,
+      .caption_txt > p {
+        margin: 0;
+        padding: 0;
+        text-align: unset;
+      }
+
+      figure, aside, div {
+        &.quote_box.quote_box.quote_box > {
+          div, blockquote {
+            background-color: unset;
+            border: initial;
+            color: unset;
+            font-size: unset;
+            font-style: unset;
+            line-height: normal;
+            width: initial;
+
+            &::before, &::after {
+              content: unset;
+            }
+          }
+        }
+      }
+    /* END: Remove browser and theme styles */
+
+    /* BGN: Add margins */
+      figure.quote_box.quote_box.quote_box, aside.quote_box.quote_box.quote_box, div.quote_box.quote_box.quote_box, aside.figure_box, div.figure_box {
+        margin: 1rem auto; /* Margin between blockquotes and center */
+        padding: 0 2rem;
+      }
+
+      figure, aside, div {
+        &.quote_box.quote_box.quote_box > {
+          div, blockquote {
+            margin: 1rem; /* margin of text inside */
+            padding: 0;
+            position: relative;
+          }
+        }
+      }
+    /* END: Add margins */
+
+    .attribution_name > p::before {
+      content: "\2015"; /* horizontal bar; quotation dash as per https://unicode.org/charts/PDF/U2000.pdf */
+    }
+
+    .attribution_copyright, .caption_txt {
+      color: unset;
+      line-height: normal;
+      margin-bottom: 23px;
+
+      > p > small {
+        /* font-size: 0.84rem; */
+        font-size: 0.73em;
+        /* font-size: x-small; */
+      }
+    }
+  }
+
+  /* BGN: .quote_box Styles */
+    /** Notes
+      * .quote_box Styles
+          * qbs_generic
+          * qbs_stanza
+          * qbs_verse01
+      *
+      * .quote_box Quotation Marks
+          * qbm_doublequotationmark
+      *
+      * .quote_box Blockquote Colours
+          * qbc_cgm
+          * qbc_greylight
+          * qbc_silver
+          * qbc_white
+          * qbc_red
+          * qbc_lime
+          * qbc_green
+          * qbc_indigodye
+          * qbc_midnightblue
+          * qbc_blue
+          * qbc_aqua, qbc_cyan
+          * qbc_fuchsia, qbc_magenta
+          * qbc_yellow
+          * qbc_orange
+          * qbc_gold
+          * qbc_pink
+          * qbc_facebook
+          * qbc_twitter
+          * qbc_googleplus
+          * qbc_ubuntu
+          * qbc_mastodon
+          * qbc_hubzilla
+    **/
+
+    /* BGN: .quote_box Styles */
+      /* BGN: set our own style */
+        html body .quote_box.qbs_generic,
+        html body .figure_box.qbs_generic {
+          border-radius: 10px;
+          border-style: double;
+          border-width: 4px;
+          margin: 1rem auto;
+          padding-left: 2.44rem;
+          padding-right: 2.44rem;
+          position: relative;
+          quotes: '\201C' '\201D' '\2018' '\2019';
+          width: 80%;
+        }
+        /** TODO: CREATE A NEW STYLE
+          *
+          * Currently mostly a copy of .qbs_generic
+          *
+        **/
+        html body .quote_box.qbs_stanza,
+        html body .figure_box.qbs_stanza {
+          border-radius: 10px;
+          border-style: dotted;
+          border-width: 4px;
+          margin: 1rem auto;
+          padding-left: 2.44rem;
+          padding-right: 2.44rem;
+          position: relative;
+          quotes: '\201C' '\201D' '\2018' '\2019';
+          width: 67%;
+        }
+        html body .quote_box.qbs_verse01,
+        html body .figure_box.qbs_verse01 {
+          /* border-radius: 0.5rem 1.7rem 0.5rem 1.7rem; */
+          border-radius: 5px 17px 5px 17px;
+          border-style: dashed;
+          border-width: 4px;
+          box-shadow: hsla(0deg, 0%, 0%, 0.5) 7px 7px;
+          box-shadow: hwb(0deg 0% 100% / 50%) 7px 7px;
+          margin: 1rem auto;
+          padding-left: 2.44rem;
+          padding-right: 2.44rem;
+          position: relative;
+          quotes: '\201C' '\201D' '\2018' '\2019';
+          width: 80%;
+        }
+      /* END: set our own style */
+    /* END: .quote_box Styles */
+
+    /* BGN: .quote_box Quotation Marks */
+      html body .qbm_doublequotationmark.qbm_doublequotationmark.qbm_doublequotationmark.qbm_doublequotationmark::before,
+      html body .qbm_doublequotationmark.qbm_doublequotationmark.qbm_doublequotationmark.qbm_doublequotationmark::after {
+        /* Let's leave the styling to the theme for now.
+          color: hsla(0deg, 0%, 48%, 1);
+          color: hwb(0deg 48% 52% / 100%);
+        */
+        font-family: 'Noto Serif', serif;
+        font-size: 3rem;
+        position: absolute;
+      }
+      html body .qbm_doublequotationmark.qbm_doublequotationmark.qbm_doublequotationmark.qbm_doublequotationmark::before {
+        content: open-quote;
+        left: -2rem;
+        top: -1.8rem;
+      }
+      html body .qbm_doublequotationmark.qbm_doublequotationmark.qbm_doublequotationmark.qbm_doublequotationmark::after {
+        content: close-quote;
+        bottom: -3rem;
+        right: -2rem;
+      }
+    /* END: .quote_box Quotation Marks */
+
+    /* BGN: .quote_box Colours */
+      /** Notes
+        * deep indigo ("blueviolet") - #8A2BE2 138, 43, 226
+        *   * hsla(271deg, 76%, 53%, 1)
+        *   * hwb(271deg 17% 11% / 100%)
+        *   * brighter than pigment indigo
+        * pigment indigo ("indigo") - #4B0082 75, 0, 130
+        *   * hsla(275deg, 100%, 25%, 1)
+        *   * hwb(275deg 0% 49% / 100%)
+        * indigo dye - #00416A 0, 65, 106
+        *   * hsla(203deg, 100%, 21%, 1)
+        *   * hwb(203deg 0% 58% / 100%)
+        *   * actual color of the indigo dye
+        *   * greenish dark blue
+        *   * approximately "midnightblue" - #191970 25, 25, 112
+        *       * hsla(240deg, 64%, 27%, 1)
+        *       * hwb(240deg 10% 56% / 100%)
+        *       * similar to "navy" - #000080 0, 0, 128
+        * "darkblue" - #00008B 0, 0, 139
+        *   * hsla(240deg, 100%, 27%, 1)
+        *   * hwb(240deg 0% 45% / 100%)
+      **/
+      /* BGN: Generic colours */
+        html body .quote_box.qbc_black,
+        html body .figure_box.qbc_black  {
+          background-color: hsla(0deg, 0%, 0%, 0.5);
+          background-color: hwb(0deg 0% 100% / 50%);
+          border-color: hsla(0deg, 0%, 0%, 1);
+          border-color: hwb(0deg 0% 100% / 100%);
+        }
+        html body .quote_box.qbc_greylight,
+        html body .figure_box.qbc_greylight {
+          background-color: hsla(0deg, 0%, 83%, 0.5);
+          background-color: hwb(0deg 83% 17% / 50%);
+          border-color: hsla(0deg, 0%, 83%, 1);
+          border-color: hwb(0deg 83% 17% / 100%);
+        }
+        html body .quote_box.qbc_silver,
+        html body .figure_box.qbc_silver {
+          background-color: hsla(0deg, 0%, 75%, 0.5);
+          background-color: hwb(0deg 75% 25% / 50%);
+          border-color: hsla(0deg, 0%, 75%, 1);
+          border-color: hwb(0deg 75% 25% / 100%);
+        }
+        html body .quote_box.qbc_white,
+        html body .figure_box.qbc_white {
+          background-color: hsla(0deg, 0%, 100%, 0.8);
+          background-color: hwb(0deg 100% 0% / 80%);
+          border-color: hsla(0deg, 0%, 100%, 1);
+          border-color: hwb(0deg 100% 0% / 100%);
+        }
+        html body .quote_box.qbc_red,
+        html body .figure_box.qbc_red {
+          background-color: hsla(0deg, 100%, 50%, 0.23);
+          background-color: hwb(0deg 0% 0% / 23%);
+          border-color: hsla(0deg, 100%, 50%, 1);
+          border-color: hwb(0deg 0% 0% / 100%);
+        }
+        html body .quote_box.qbc_lime,
+        html body .figure_box.qbc_lime {
+          background-color: hsla(120deg, 100%, 50%, 0.2);
+          background-color: hwb(120deg 0% 0% / 20%);
+          border-color: hsla(120deg, 100%, 50%, 1);
+          border-color: hwb(120deg 0% 0% / 100%);
+        }
+        html body .quote_box.qbc_green,
+        html body .figure_box.qbc_green {
+          background-color: hsla(120deg, 100%, 25%, 0.35);
+          background-color: hwb(120deg 0% 50% / 35%);
+          border-color: hsla(120deg, 100%, 25%, 1);
+          border-color: hwb(120deg 0% 50% / 100%);
+        }
+        html body .quote_box.qbc_blue,
+        html body .figure_box.qbc_blue {
+          background-color: hsla(240deg, 100%, 50%, 0.27);
+          background-color: hwb(240deg 0% 0% / 27%);
+          border-color: hsla(240deg, 100%, 50%, 1);
+          border-color: hwb(240deg 0% 0% / 100%);
+        }
+        html body .quote_box.qbc_indigodye,
+        html body .figure_box.qbc_indigodye {
+          background-color: hsla(203deg, 100%, 21%, 0.34);
+          background-color: hwb(203deg 0% 58% / 34%);
+          border-color: hsla(203deg, 100%, 21%, 1);
+          border-color: hwb(203deg 0% 58% / 100%);
+          /* border-color: hsla(240deg, 64%, 27%, 100%); */
+          /* border-color: hwb(240deg 10% 56% / 100%); */
+        }
+        html body .quote_box.qbc_midnightblue,
+        html body .figure_box.qbc_midnightblue {
+          background-color: hsla(240deg, 64%, 27%, 0.3);
+          background-color: hwb(240deg 10% 56% / 30%);
+          border-color: hsla(240deg, 64%, 27%, 1);
+          border-color: hwb(240deg 10% 56% / 100%);
+          /* border-color: hsla(240deg, 100%, 27%, 1); */
+          /* border-color: hwb(240deg 0% 45% / 100%); */
+        }
+        html body .quote_box.qbc_aqua,
+        html body .figure_box.qbc_aqua,
+        html body .quote_box.qbc_cyan,
+        html body .figure_box.qbc_cyan {
+          background-color: hsla(180deg, 100%, 50%, 0.13);
+          background-color: hwb(180deg 0% 0% / 13%);
+          border-color: hsla(180deg, 100%, 50%, 1);
+          border-color: hwb(180deg 0% 0% / 100%);
+        }
+        html body .quote_box.qbc_fuchsia,
+        html body .figure_box.qbc_fuchsia,
+        html body .quote_box.qbc_magenta,
+        html body .figure_box.qbc_magenta {
+          background-color: hsla(300deg, 100%, 50%, 0.18);
+          background-color: hwb(300deg 0% 0% / 18%);
+          border-color: hsla(300deg, 100%, 50%, 1);
+          border-color: hwb(300deg 0% 0% / 100%);
+        }
+        html body .quote_box.qbc_yellow,
+        html body .figure_box.qbc_yellow {
+          background-color: hsla(60deg, 100%, 50%, 0.18);
+          background-color: hwb(60deg 0% 0% / 18%);
+          border-color: hsla(60deg, 100%, 50%, 1);
+          border-color: hwb(60deg 0% 0% / 100%);
+        }
+        html body .quote_box.qbc_orange,
+        html body .figure_box.qbc_orange {
+          background-color: hsla(39deg, 100%, 50%, 0.28);
+          background-color: hwb(39deg 0% 0% / 28%);
+          border-color: hsla(39deg, 100%, 50%, 1);
+          border-color: hwb(39deg 0% 0% / 100%);
+        }
+        html body .quote_box.qbc_gold,
+        html body .figure_box.qbc_gold {
+          background-color: hsla(51deg, 100%, 50%, 0.37);
+          background-color: hwb(51deg 0% 0% / 37%);
+          border-color: hsla(51deg, 100%, 50%, 1);
+          border-color: hwb(51deg 0% 0% / 100%);
+        }
+        html body .quote_box.qbc_pink,
+        html body .figure_box.qbc_pink {
+          background-color: hsla(350deg, 100%, 88%, 0.55);
+          background-color: hwb(350deg 75% 0% / 55%);
+          border-color: hsla(350deg, 100%, 88%, 1);
+          border-color: hwb(350deg 75% 0% / 100%);
+        }
+      /* END: Generic colours */
+
+      /* BGN: Brand colours */
+        html body .quote_box.qbc_facebook,
+        html body .figure_box.qbc_facebook {
+          background-color: hsla(220deg, 46%, 48%, 0.45);
+          background-color: hwb(220deg 26% 30% / 45%);
+          border-color: hsla(220deg, 46%, 48%, 1);
+          border-color: hwb(220deg 26% 30% / 100%);
+        }
+        html body .quote_box.qbc_twitter,
+        html body .figure_box.qbc_twitter {
+          background-color: hsla(203deg, 78%, 49%, 0.45);
+          background-color: hwb(203deg 11% 12% / 45%);
+          border-color: hsla(203deg, 78%, 49%, 1);
+          border-color: hwb(203deg 11% 12% / 100%);
+        }
+        html body .quote_box.qbc_googleplus,
+        html body .figure_box.qbc_googleplus {
+          background-color: hsla(5deg, 69%, 54%, 0.4);
+          background-color: hwb(5deg 22% 14% / 40%);
+          border-color: hsla(5deg, 69%, 54%, 1);
+          border-color: hwb(5deg 22% 14% / 100%);
+        }
+        html body .quote_box.qbc_ubuntu,
+        html body .figure_box.qbc_ubuntu {
+          background-color: hsla(16deg, 82%, 52%, 0.25);
+          background-color: hwb(16deg 13% 9% / 25%);
+          border-color: hsla(16deg, 82%, 52%, 1);
+          border-color: hwb(16deg 13% 9% / 100%);
+        }
+        html body .quote_box.qbc_mastodon,
+        html body .figure_box.qbc_mastodon {
+          background-color: hsla(205deg, 70%, 51%, 0.44);
+          background-color: hwb(205deg 17% 15% / 44%);
+          border-color: hsla(205deg, 70%, 51%, 1);
+          border-color: hwb(205deg 17% 15% / 100%);
+        }
+        html body .quote_box.qbc_hubzilla,
+        html body .figure_box.qbc_hubzilla {
+          background-color: hsla(236deg, 35%, 40%, 0.43);
+          background-color: hwb(236deg 26% 46% / 43%);
+          border-color: hsla(236deg, 35%, 40%, 1);
+          border-color: hwb(236deg 26% 46% / 100%);
+        }
+      /* END: Brand colours */
+
+      /* BGN: Special custom colours */
+        html body .quote_box.qbc_cm,
+        html body .figure_box.qbc_cm,
+        html body .quote_box.qbc_gm,
+        html body .figure_box.qbc_gm,
+        html body .quote_box.qbc_cgm,
+        html body .figure_boxx.qbc_cgm {
+          background-color: hsla(180deg, 100%, 94%, 1);
+          background-color: hwb(180deg 88% 0% / 100%);
+          border-color: hsla(240deg, 100%, 75%, 1);
+          border-color: hwb(240deg 50% 0% / 100%);
+        }
+      /* END: Special custom colours */
+    /* END: .quote_box Colours */
+  /* END: .quote_box Styles */
+/*********************
+** END: Attribution **
+*********************/
+
+/**********************
+** BGN: Custom Lists **
+**********************/
+  .note {
+    display: list-item;
+    list-style-position: inside;
+
+    &::marker {
+      content: "Note: ";
+    }
+  }
+
+  :lang(ja) .note::marker {
+    content: "通知：";
+  }
+
+  :lang(ko) .note::marker {
+    content: "통지: ";
+  }
+
+  .notecounter {
+    display: list-item;
+    counter-increment: note-counter;
+    list-style-position: inside;
+
+    &::marker {
+      content: "Note " counter(note-counter) ": ";
+    }
+  }
+
+  :lang(ja) .notecounter::marker {
+    content: "通知" counter(note-counter, japanese-informal) "：";
+  }
+
+  :lang(ko) .notecounter::marker {
+    content: "통지 " counter(note-counter, korean-hangul-formal) ": ";
+  }
+
+  ul {
+    &[class^="cul-"] {
+      display: list-item;
+      list-style-position: inside;
+    }
+
+    &.cul-checkmark-heavy {
+      content: "\2714";
+
+      /* heavy check mark */
+    }
+
+    &.cul-checkmark-light {
+      content: "\1F5F8";
+
+      /* light check mark */
+    }
+  }
+
+/**********************
+** END: Custom Lists **
+**********************/
+
+/*************************************************
+** BGN: Colours for Backgrounds, Lists, & Texts **
+*************************************************/
+  /*
+   * Colour override order (.list- & .text-)
+   *   red < green < blue < yellow < gold < magenta < pink
+   *
+   * Background (.list-bg-)
+   *   greylight > silver
+   *
+   * Custom List Style element override order: UL-level < LI-level
+   */
+  /* Background Colours */
+  ol.custom_liststyle.list-bg-grey-light > li,
+  ol.custom_liststyle.list-bg-greylight > li {
+    background: hsla(0deg, 0%, 83%, 0.2);
+    background: hwb(0deg 83% 17% / 0.2);
+  }
+  ol.custom_liststyle.list-bg-silver > li {
+    background: hsla(0deg, 0%, 75%, 0.2);
+    background: hwb(0deg 75% 25% / 0.2);
+  }
+
+  /* custom_liststyle: UL-level only */
+  /* BGN: Generic colours */
+    ul.custom_liststyle.list-black > li::before {
+      color: hsla(0deg, 0%, 0%, 1);
+      color: hwb(0deg 0% 100% / 100%);
+    }
+    ul.custom_liststyle.list-white > li::before {
+      color: hsla(0deg, 0%, 100%, 1);
+      color: hwb(0deg 100% 0% / 100%);
+    }
+    ul.custom_liststyle.list-red > li::before {
+      color: hsla(0deg, 100%, 50%, 1);
+      color: hwb(0deg 0% 0% / 100%);
+    }
+    ul.custom_liststyle.list-lime > li::before {
+      color: hsla(120deg, 100%, 50%, 1);
+      color: hwb(120deg 0% 0% / 100%);
+    }
+    ul.custom_liststyle.list-green > li::before {
+      color: hsla(120deg, 100%, 25%, 1);
+      color: hwb(120deg 0% 50% / 100%);
+    }
+    ul.custom_liststyle.list-blue > li::before {
+      color: hsla(240deg, 100%, 50%, 1);
+      color: hwb(240deg 0% 0% / 100%);
+    }
+    ul.custom_liststyle.list-aqua::before > li::before,
+    ul.custom_liststyle.list-cyan::before > li::before {
+      color: hsla(180deg, 100%, 50%, 1);
+      color: hwb(180deg 0% 0% / 100%);
+    }
+    ul.custom_liststyle.list-fuchsia > li::before,
+    ul.custom_liststyle.list-magenta > li::before {
+      color: hsla(300deg, 100%, 50%, 1);
+      color: hwb(300deg 0% 0% / 100%);
+    }
+    ul.custom_liststyle.list-yellow > li::before {
+      color: hsla(60deg, 100%, 50%, 1);
+      color: hwb(60deg 0% 0% / 100%);
+    }
+    ul.custom_liststyle.list-orange > li::before {
+      color: hsla(39deg, 100%, 50%, 1);
+      color: hwb(39deg 0% 0% / 100%);
+    }
+    ul.custom_liststyle.list-gold > li::before {
+      color: hsla(51deg, 100%, 50%, 1);
+      color: hwb(51deg 0% 0% / 100%);
+    }
+    ul.custom_liststyle.list-pink > li::before {
+      color: hsla(350deg, 100%, 88%, 1);
+      color: hwb(350deg 75% 0% / 100%);
+    }
+    ul.custom_liststyle.list-brown > li::before {
+      color: hsla(26deg, 32%, 54%, 1);
+      color: hwb(26deg 39% 31% / 100%);
+    }
+    ul.custom_liststyle.list-mediumdarkbrown > li::before {
+      color: hsla(27deg, 35%, 51%, 1);
+      color: hwb(27deg 34% 31% / 100%);
+    }
+  /* END: Generic colours */
+
+  /* BGN: Brand colours */
+    ul.custom_liststyle.list-facebook::before > li::before {
+      color: hsla(220deg, 46%, 48%, 1);
+      color: hwb(220deg 26% 30% / 100%);
+    }
+    ul.custom_liststyle.list-twitter::before > li::before {
+      color: hsla(203deg, 78%, 49%, 1);
+      color: hwb(203deg 11% 12% / 100%);
+    }
+    ul.custom_liststyle.list-googleplus::before > li::before {
+      color: hsla(5deg, 69%, 54%, 1);
+      color: hwb(5deg 22% 14% / 100%);
+    }
+    ul.custom_liststyle.list-ubuntu::before > li::before {
+      color: hsla(16deg, 82%, 52%, 1);
+      color: hwb(16deg 13% 9% / 100%);
+    }
+    ul.custom_liststyle.list-mastodon::before > li::before {
+      color: hsla(205deg, 70%, 51%, 1);
+      color: hwb(205deg 17% 15% / 100%);
+    }
+    ul.custom_liststyle.list-hubzilla::before > li::before {
+      color: hsla(236deg, 35%, 40%, 1);
+      color: hwb(236deg 26% 46% / 100%);
+    }
+  /* END: Brand colours */
+
+  /**
+    * Custom List Style notes:
+    *   1. To make colour override work in custom_liststyle
+    *       we have to separate the LI-level colours.
+    *   2. Chained classes for custom_liststyle is not an option.
+    *       It will color the text as well.
+    *
+    * TEXT colour note:
+    *   1. Generic class names like .red, .green, and .blue are not advisable.
+    *       These are too common, other CSS files might be using the same.
+  **/
+  /* BGN: Generic colours */
+    ul.custom_liststyle > li.list-black::before,
+    .text-black {
+      color: hsla(0deg, 0%, 0%, 1);
+      color: hwb(0deg 0% 100% / 100%);
+    }
+    ul.custom_liststyle > li.list-white::before,
+    .text-white {
+      color: hsla(0deg, 0%, 100%, 1);
+      color: hwb(0deg 100% 0% / 100%);
+    }
+    ul.custom_liststyle > li.list-red::before,
+    .text-red {
+      color: hsla(0deg, 100%, 50%, 1);
+      color: hwb(0deg 0% 0% / 100%);
+    }
+    ul.custom_liststyle > li.list-lime::before,
+    .text-lime {
+      color: hsla(120deg, 100%, 50%, 1);
+      color: hwb(120deg 0% 0% / 100%);
+    }
+    ul.custom_liststyle > li.list-green::before,
+    .text-green {
+      color: hsla(120deg, 100%, 25%, 1);
+      color: hwb(120deg 0% 50% / 100%);
+    }
+    ul.custom_liststyle > li.list-blue::before,
+    .text-blue {
+      color: hsla(240deg, 100%, 50%, 1);
+      color: hwb(240deg 0% 0% / 100%);
+    }
+    ul.custom_liststyle > li.list-aqua::before,
+    ul.custom_liststyle > li.list-cyan::before,
+    .text-aqua,
+    .text-cyan {
+      color: hsla(180deg, 100%, 50%, 1);
+      color: hwb(180deg 0% 0% / 100%);
+    }
+    ul.custom_liststyle > li.list-fuchsia::before,
+    ul.custom_liststyle > li.list-magenta::before,
+    .text-fuchsia,
+    .text-magenta {
+      color: hsla(300deg, 100%, 50%, 1);
+      color: hwb(300deg 0% 0% / 100%);
+    }
+    ul.custom_liststyle > li.list-yellow::before,
+    .text-yellow {
+      color: hsla(60deg, 100%, 50%, 1);
+      color: hwb(60deg 0% 0% / 100%);
+    }
+    ul.custom_liststyle > li.list-orange::before,
+    .text-orange {
+      color: hsla(39deg, 100%, 50%, 1);
+      color: hwb(39deg 0% 0% / 100%);
+    }
+    ul.custom_liststyle > li.list-gold::before,
+    .text-gold {
+      color: hsla(51deg, 100%, 50%, 1);
+      color: hwb(51deg 0% 0% / 100%);
+    }
+    ul.custom_liststyle > li.list-pink::before,
+    .text-pink {
+      color: hsla(350deg, 100%, 88%, 1);
+      color: hwb(350deg 75% 0% / 100%);
+    }
+    ul.custom_liststyle > li.list-brown::before,
+    .text-brown {
+      color: hsla(26deg, 32%, 54%, 1);
+      color: hwb(26deg 39% 31% / 100%);
+    }
+    ul.custom_liststyle > li.list-mediumdarkbrown::before,
+    .text-brown {
+      color: hsla(27deg, 35%, 51%, 1);
+      color: hwb(27deg 34% 31% / 100%);
+    }
+  /* END: Generic colours */
+
+  /* BGN: Brand colours */
+    ul.custom_liststyle > li.list-facebook::before,
+    .text-facebook {
+      color: hsla(220deg, 46%, 48%, 1);
+      color: hwb(220deg 26% 30% / 100%);
+    }
+    ul.custom_liststyle > li.list-twitter::before,
+    .text-twitter {
+      color: hsla(203deg, 78%, 49%, 1);
+      color: hwb(203deg 11% 12% / 100%);
+    }
+    ul.custom_liststyle > li.list-googleplus::before,
+    .text-googleplus {
+      color: hsla(5deg, 69%, 54%, 1);
+      color: hwb(5deg 22% 14% / 100%);
+    }
+    ul.custom_liststyle > li.list-ubuntu::before,
+    .text-ubuntu {
+      color: hsla(16deg, 82%, 52%, 1);
+      color: hwb(16deg 13% 9% / 100%);
+    }
+    ul.custom_liststyle > li.list-mastodon::before,
+    .text-mastodon {
+      color: hsla(205deg, 70%, 51%, 1);
+      color: hwb(205deg 17% 15% / 100%);
+    }
+    ul.custom_liststyle > li.list-hubzilla::before,
+    .text-hubzilla {
+      color: hsla(236deg, 35%, 40%, 1);
+      color: hwb(236deg 26% 46% / 100%);
+    }
+  /* END: Brand colours */
+
+  /* BGN: Special custom colours */
+    .text-cm, .text-gm, .text-cgm {
+      color: hsla(210deg, 100%, 50%, 1);
+      color: hwb(210deg 0% 0% / 100%);
+      font-weight: bold;
+    }
+  /* END: Special custom colours */
+/*************************************************
+** END: Colours for Backgrounds, Lists, & Texts **
+*************************************************/
+
+/********************
+** BGN: webmention **
+********************/
+  #webmentions {
+    content-visibility: auto;
+    contain-intrinsic-size: auto;
+  }
+
+  #webmentions {
+    margin: 0;
+
+    h2 {
+      font-size: medium;
+      /* margin-top: 0; */
+      padding: 2px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 4px;
+    }
+
+    li {
+      /* margin: 123px; */
+    }
+
+    a {
+      border-bottom: none;
+
+      &.reaction {
+        /* margin: 123px; */
+
+        img {
+          border-radius: 25%;
+          text-decoration: none;
+        }
+
+        sub {
+          font-size: 50%;
+        }
+      }
+    }
+
+    .reacts {
+      img {
+        display: inline-block;
+        margin: 3px -1ex 1px 0;
+      }
+
+      a.reaction {
+        img {
+          max-height: 2.0em;
+        }
+
+        .emoji {
+          font-size: 1.1em;
+          margin-left: -5px;
+          vertical-align: text-bottom;
+        }
+      }
+    }
+
+    .comments {
+      /* margin: 123px; */
+
+      li {
+        /* margin: 123px; */
+
+        .name, .text {
+          text-indent: -1.2em;
+          /* padding-left: 3em; */
+        }
+      }
+
+      a.reaction {
+        img {
+          max-height: 3.0em;
+        }
+
+        .emoji {
+          font-size: 1.3em;
+        }
+      }
+    }
+  }
+
+  /* BGN: Speech bubble style-01 by https://codepen.io/rikschennink/pen/mjywQb */
+    #webmentions .comments li .text {
+      /* layout */
+      position: relative;
+      max-width: 90%;
+      margin-left: 5%;
+
+      /* looks */
+      /* background-color: #fff; */
+      padding: 1.125em 2.5em;
+      border-radius: 1rem;
+      box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+
+      &::before {
+        /* layout */
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: 100%;
+        left: 2.4em;
+
+        /* offset should move with padding of parent */
+        border: .75rem solid transparent;
+        border-top: none;
+
+        /* looks */
+        /* border-bottom-color: #fff; */
+        -webkit-filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+                filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, 0.1));
+      }
+    }
+  /* END: Speech bubble style-01 */
+
+/********************
+** BGN: webmention **
+********************/
+
+/********************
+** BGN: Link icons **
+********************/
+  [class^="icon_"]::after {
+    display: inline-block;
+    text-decoration: none;
+    white-space: pre-wrap;
+    margin-left: 0.25em;
+    width: 1em;
+  }
+  .icon_external::after     { content: "\1F517";                                    /* 🔗 */ }
+
+  .icon_chat::after         { content: "\1F4AC";                                    /* 💬 */ }
+  .icon_ftp::after          { content: "\2194\FE0F";                                /* ↔️ */ }
+  .icon_magnet::after       { content: "\1F9F2";                                    /* 🧲 */ }
+  .icon_mail::after         { content: "\1F4E7";                                    /* 📧 */ }
+  .icon_remote::after       { content: "\1F4BB";                                    /* 💻 */ }
+  .icon_tel::after          { content: "\260E\FE0F";                                /* ☎️ */ }
+
+  .icon_books::after        { content: "\1F4D6";                                    /* 📖 */ }
+  .icon_document::after     { content: "\1F4C4";                                    /* 📄 */ }
+  .icon_text::after         { content: "\1F4DD";                                    /* 📝 */ }
+  .icon_presentation::after { content: url("../fonts/link-icons-presentation.svg"); /* https://openclipart.org/detail/36505/tango-x-office-presentation */ }
+  .icon_spreadsheet::after  { content: url("../fonts/link-icons-spreadsheet.svg");  /* https://openclipart.org/detail/36517/tango-x-office-spreadsheet */ }
+
+  .icon_audio::after        { content: "\1F3B5";                                    /* 🎵 */ }
+  .icon_video::after        { content: "\1F4FD\FE0F";                               /* 📽️ */ }
+  .icon_subtitle::after     { content: url("../fonts/link-icons-subtitle.svg");     /* https://openclipart.org/detail/212110/mimetype-subtitle */ }
+
+  .icon_executable::after   { content: url("../fonts/link-icons-executable.svg");   /* https://openclipart.org/detail/212161/mimetype-binary */ }
+  .icon_scripts::after      { content: url("../fonts/link-icons-scripts.svg");      /* https://openclipart.org/detail/36175/tango-text-x-script */ }
+
+  .icon_fonts::after        { content: url("../fonts/link-icons-fonts.svg");        /* https://openclipart.org/detail/35257/tango-preferences-desktop-font */ }
+  .icon_compressed::after   { content: "\1F5DC\FE0F";                               /* 🗜️ */ }
+  .icon_diskimage::after    { content: "\1F4BD";                                    /* 💽 */ }
+  .icon_imagediting::after  { content: url("../fonts/link-icons-imageediting.svg"); /* https://openclipart.org/detail/231061/artists-brush-and-paint */ }
+/********************
+** END: Link icons **
+********************/
+
+/****************
+** BGN: Badges **
+****************/
+  [class^="badges-"][class^="badges-"] {
+    display: list-item;
+    list-style: none;
+    list-style-position: inside;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+
+    span {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .badges-content.badges-content span {
+    display: inline-block;
+    margin-left: 0.1rem;
+    margin-right: 0.2rem;
+  }
+  .badges-footer.badges-footer span {
+    display: inline-block;
+    margin-left: 0.1rem;
+    margin-right: 0.2rem;
+  }
+/****************
+** END: Badges **
+****************/

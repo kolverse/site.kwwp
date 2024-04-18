@@ -1,6 +1,6 @@
 module gitlab.com/kwwp/site.kwwp
 
-go 1.19.2
+go 1.22
 
 require (
 	github.com/techmagus/maupassant-hugo main

@@ -1,0 +1,5 @@
+# See: https://gohugo.io/templates/sitemap-template/#configuration
+
+changefreq = ""                       # default: empty
+filename = "sitemap.xml"              # default: sitemap.xml
+priority = -1                         # default: -1

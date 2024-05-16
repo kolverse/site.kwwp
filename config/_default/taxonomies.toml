@@ -1,4 +1,14 @@
-channel = "channels"
+# See: https://gohugo.io/content-management/taxonomies#configure-taxonomies
+
+# Hugo defaults
 category = "categories"
 series = "series"
 tag = "tags"
+
+# Yelosan defaults
+channel = "channels"
+
+###
+##  NOTE:
+##    * add other custom taxonomies per site
+###

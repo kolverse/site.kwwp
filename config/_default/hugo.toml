@@ -1,42 +1,38 @@
-####### Base Config #######
-  baseURL = "https://kolverse.youronly.one/"             # .Site.BaseURL
-  title = "Kolverse Worldbuilding & Writing Project"                                        # .Site.Title; IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
-  copyright = ""                                            # .Site.Copyright; leave empty and uncommented to override theme default; we are using our own footer
+# See: https://gohugo.io/getting-started/configuration/
+
+####### BASE CONFIG #######
+  baseURL = "https://kolverse.youronly.one/"                                              # .Site.BaseURL
+  title = "Kolverse Worldbuilding & Writing Project"                                                # .Site.Title; IMPT for Schema.org; OpenGraph; Twitter Cards; RDFa, Microdata, JSON-LD
+  copyright = ""                                            # .Site.Copyright; leave empty to override theme
   timeZone = "Etc/UTC"
 
 
-####### Site settings #######
-  paginate = 10
-  #paginatePath = "page"                                     # https://example.com/page/2
-  rssLimit = 20
-  summaryLength = 100                                       # default: 70
+####### FRONTEND #######
+  paginate = 10                                             # default: 10
+  rssLimit = 25                                             # default: -1
+  summaryLength = 240                                        # default: 70
+  titleCaseStyle = "firstupper"                                     # default: AP; our choice: firstupper; backup: Chicago
+
+
+####### LANGUAGE #######
+  languageCode = "en-ph"
+  defaultContentLanguage = "en-ph"                             # default: en
+  #defaultContentLanguageInSubdir = false                   # default: false
+  hasCJKLanguage = true                                    # default: false
+  # Our LANG: 'en', 'en-ph', 'fil', 'fil-hang', 'tl-tglg', 'zh-hant', 'zh-hans', 'zh-bopo', 'ja', 'ko'
+  disableLanguages = ['en', 'fil', 'fil-hang', 'tl-tglg', 'zh-hant', 'zh-hans', 'zh-bopo', 'ja', 'ko']
+
+
+
+####### BACKEND #######
+  disableKinds = ["robotsTXT"]
+  #enableGitInfo = false                                     # default: false; for Git versioning
+  enableMissingTranslationPlaceholders = true              # default: false
+  #pluralizeListTitles = false                                # default: true
+  #publishDir = "public"                                     # default: public
+  #timeout = "30s"                                           # default: 30s
 
   #### Other settings ####
-    #disqusShortname = "kolverse"                         # .Site.DisqusShortname
-    #googleAnalytics = ""                                    # .Site.GoogleAnalytics
-
-
-####### Backend settings #######
-  canonifyURLs = true                                       # true for our use-case
-  #disableAliases = true                                     # use this if we want to use server redirects
-  enableEmoji = false                                       # format :smile:.
-  enableGitInfo = false
-  relativeURLs = false                                      # false for our use-case; make all relative URLs relative to content root
-  refLinksNotFoundURL = "https://kolverse.youronly.one/"
-
-  ## Dev settings ##
-    publishDir = "public"
-    enableMissingTranslationPlaceholders = true
-    timeout = "30s"
-
-  ## Other settings ##
-    disableKinds = ["robotsTXT"]
-
-#### LANG stuff ####
-  defaultContentLanguage = "en"
-  defaultContentLanguageInSubdir = false
-  hasCJKLanguage = true
-  languageCode = "en"
 
   ## Theme settings ##
   ## Theme settings ##

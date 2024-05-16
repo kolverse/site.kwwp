@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+
+  <p>Author: {{ .Params.author }}</p>
+
+  <p>
+    KSID: {{ .Params.ksid }}<br>
+    Review date: {{ .Date | time.Format ":date_long" }}
+  </p>
+
+  {{ .Content }}
+{{ end }}
+

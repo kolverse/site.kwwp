@@ -1,27 +1,43 @@
-#mainSections = ["blog", "posts"]                                             # Hugo default
-mainTypes = ["article", "sitepage", "review"]                                                # YourOnly.One
+# See: https://gohugo.io/getting-started/configuration/#merge-configuration-from-themes
 
-rssfull = true
-jquerycdn = true
-websubhubs = ["https://pubsubhubbub.appspot.com/", "https://youronlyone.superfeedr.com/", "https://pubsubhubbub.superfeedr.com/", "https://websubhub.com/hub"]
+#mainSections = ['blog', 'posts']                          # Hugo default
+mainTypes = ['article', 'sitepage', 'review']             # Yelosan default
 
-googleadsense = "ca-pub-8360283248006398"
+# See: https://gohugo.io/content-management/mathematics/
+math = false                                              # Should always be false.
+
+devnotes = false
+
+# Usually: fonts.bunny.net; fonts.googleapis.com; fonts.gstatic.com; cdn.jsdelivr.net
+preconnect = ['https://fonts.googleapis.com', 'https://fonts.gstatic.com', 'https://cdn.jsdelivr.net']
+
+# Usually: unpkg.com; cdnjs.cloudflare.com; ajax.cloudflare.com
+dnsprefetch = ['https://cdnjs.cloudflare.com', 'https://ajax.cloudflare.com']
+
+#favicon_mstilecolor = ''                           # per site
+metarobots = 'index'
+#relcanonical = ''                                  # per site
+
+## BGN: old, replace this
+  rssfull = true
+  jquerycdn = false
+## END: old, replace this
 
 ### BGN: Structured Data ###
-  siteStartYear = 2003
+  siteStartYear = 2017
 
-  description = "A Creative Commons-Attribution-ShareAlike 4.0 Collaborative and Shared Worldbuilding and Writing Project."
-  license = ""
-  keywords = ["KWWP", "Kolverse", "CC-BY-SA", "Creative Commons", "Collaborative World", "Shared World", "Worldbuilding", "Writing Project"] # Can be overriden per page
-  images = ["https://rsc.youronly.one/img/y/techmagus-smartphone-1920x1280.webp", "https://rsc.youronly.one/img/y/techmagus-Architetto-Esperiment-chimico.webp"]
-  #copyright = ""
+  #copyright = 'Copyleft 🄯 2024 Yelosan Publishing, YourOnly.One; under a Creative Commons-Attribution-ShareAlike (CC-By-SA) 4.0 International License.'
+  description = 'A Creative Commons-Attribution-ShareAlike 4.0 Collaborative and Shared Worldbuilding and Writing Project.'
+  license = 'https://creativecommons.org/licenses/by-sa/4.0/'
+  keywords = ['KWWP', 'Kolverse', 'Collaborative World', 'Collaborative Universe', 'Shared World', 'Shared Universe', 'Worldbuilding', 'Writing Project']                              # Can be overriden per page
+  #images = ['', '']
 ### END: Structured Data ###
 
 ### BGN: Theme settings
   subtitle = "Subtitle here"
   busuanzi = true
   localSearch = true
-  toc = true
+  #toc = true
 
   #[[links]]
   #  title = ""
@@ -56,8 +72,232 @@ googleadsense = "ca-pub-8360283248006398"
     link = "https://creativecommons.org/licenses/by-sa/4.0/"
 ### END: Theme settings
 
+### BGN: Hugo module settings ###
+  ##### BGN: syndication #####
+    ## Custom entries only work if placed in per-site params.toml ##
+    [[sns]]
+      url = 'blogspot.com'
+      icon = 'blogspot.svg'
+    [[sns]]
+      url = 'bsky.app'
+      icon = 'bluesky.svg'
+    [[sns]]
+      url = 'c.im'
+      icon = 'mastodon.png'
+    [[sns]]
+      url = 'c.wtf'
+      icon = 'rebased.svg'
+    [[sns]]
+      url = 'catodon.social'
+      icon = 'catodon.png'
+    [[sns]]
+      url = 'diasp.org'
+      icon = 'diaspora.svg'
+    [[sns]]
+      url = 'ebin.club'
+      icon = 'fediverse.svg'
+    [[sns]]
+      url = 'facebook.com'
+      icon = 'facebook.svg'
+    [[sns]]
+      url = 'fb.com'
+      icon = 'facebook.svg'
+    [[sns]]
+      url = 'fedia.io'
+      icon = 'mbin.svg'
+    [[sns]]
+      url = 'fedia.social'
+      icon = 'iceshrimp.png'
+    [[sns]]
+      url = 'instagram.com'
+      icon = 'instagram.svg'
+    [[sns]]
+      url = 'mastodon.online'
+      icon = 'mastodon.png'
+    [[sns]]
+      url = 'mastodon.social'
+      icon = 'mastodon.png'
+    [[sns]]
+      url = 'naver.com'
+      icon = 'naver.png'
+    [[sns]]
+      url = 'p.lu'
+      icon = 'peertube.svg'
+    [[sns]]
+      url = 'pixelfed.social'
+      icon = 'pixelfed.svg'
+    [[sns]]
+      url = 'plurk.com'
+      icon = 'plurk.svg'
+    [[sns]]
+      url = 'reddit.com'
+      icon = 'reddit.svg'
+    [[sns]]
+      url = 'socialhome.network'
+      icon = 'socialhome-black.svg'
+    [[sns]]
+      url = 'spoutible.com'
+      icon = 'spoutible.png'
+    [[sns]]
+      url = 'threads.net'
+      icon = 'threads.svg'
+    [[sns]]
+      url = 'tumblr.com'
+      icon = 'tumblr.svg'
+    [[sns]]
+      url = 'twitter.com'
+      icon = 'twitter.svg'
+    [[sns]]
+      url = 'wordpress.com'
+      icon = 'wordpress.svg'
+    [[sns]]
+      url = 'write.as'
+      icon = 'writefreely.png'
+    [[sns]]
+      url = 'x.com'
+      icon = 'x.svg'
+    [[sns]]
+      url = 'youtube.com'
+      icon = 'youtube.svg'
+    [[sns]]
+      url = 'is.youronly.one'
+      icon = 'bluesky.svg'
+    [[sns]]
+      url = 't.youronly.one'
+      icon = 'tumblr.svg'
+  ##### END: syndication #####
+### END: Hugo module settings ###
+
 ### BGN: Other Settings ###
-  #[semweb]
+  [analytics]
+    enable = true
+    position = 'head'       # head or body
+    cfwebanalytics = '07a05e5302d1458da3561ce41791e284'       # https://cloudflare.com | 'privacy-first'
+    counterdev = 'youronlyone'           # https://counter.dev | 'privacy-friendly'
+    #microanalyticsio = 'ZwSg9rf6GA'     # https://microanalytics.io | 'privacy-first', 'green energy'
+    #microsoftclarity = '63ddi0b99e'     # https://clarity.microsoft.com
+    naver = '1375cb4224f1c40'                # https://analytics.naver.com for youronly.one
+    #naver = '137a7c92882ac90'                # https://analytics.naver.com for im.youronly.one
+    swetrix = 'bYdcXUajNvru'              # https://swetrix.com | 'privacy-first'
+
+  [geotags]
+    enable = true
+    placename = 'Manila'
+    poslat = '14.599781'
+    poslong = '120.973935'
+    region = 'PH-00'
+
+  [indieweb]
+    enable = true
+    indieauth = 'https://indieauth.com/auth'
+    pingback = 'https://webmention.io/im.youronly.one/xmlrpc'
+    webmention = 'https://webmention.io/im.youronly.one/webmention'
+
+    # Usually: 'https://pubsubhubbub.appspot.com/', 'https://examplecom.superfeedr.com/', 'https://pubsubhubbub.superfeedr.com/', 'https://websubhub.com/hub'
+    websubhubs = ['https://pubsubhubbub.appspot.com/', 'https://youronlyone.superfeedr.com/', 'https://pubsubhubbub.superfeedr.com/', 'https://websubhub.com/hub']
+
+    [openid]
+      delegate = 'https://im.youronly.one/'
+      server = 'https://openid.indieauth.com/openid'
+
+  [mathml]
+    position = 'head'
+    src = 'https://cdn.jsdelivr.net/npm/mathjax@latest/es5/tex-mml-chtml.min.js'
+
+  [social]
+    # See: https://github.com/gohugoio/hugo/pull/12234
+    enable = true
+    #facebook_authorid = ''                         # template-only
+    ##codeberg = 'techmagus'                                   # username
+    #codepen = ''                                    # username
+    #deviantart = 'laibcoms'                                 # URL-name without @
+    #email = 'contact@im.youronly.one'                                      # address@example.com
+    facebook = 'YourOnly.ONE.ofcl'                                   # URL-name
+    facebook_admin = '532996690,100042645428366,2308171266072912'                             # profile ID number and page admin to get domain insights
+    facebook_appid = '183794425326191'                             # app ID
+    facebook_authorid = '2308171266072912'                          # user ID
+    facebook_pageid = '339301830572387'                            # page ID
+    github = 'techmagus'                                     # username
+    gitlab = 'techmagus'                                     # username
+    #googlescholar = ''                              # username
+    #instagram = 'youronly.one.ofcl'                                  # username
+    keybase = 'yukino'                                    # username
+    ##keyoxide = 'youronly.one/?verify=keyoxide'                                   # URL
+    #linkedin = 'youronlyone'                                   # URL-name
+    mastodon = 'c.im/@youronlyone'                                   # example.com/@username
+    #medium = 'youronly.one'                                     # username without @
+    #pinterest = 'YourOnlyONEofcl'                                  # username
+    pixelfed = 'pixelfed.social/@youronlyone'                                   # example.com/@username
+    #reddit = 'Laibcoms'                                     # username
+    #researchgate = ''                               # username
+    #slideshare = ''                                 # username
+    #stackoverflow = '306674'                              # user number
+    #strava = 'faithfulathlete'                                     # URL-name or userID number
+    #telegram = ''                                   # URL-name
+    ##threads = 'youronly.one.ofcl'                                    # username without @
+    tumblr = 't.youronly.one'                                     # URL
+    twitter = 'YourOnlyONEofcl'                                    # username; do not include @-at
+    twitter_creator = '@YourOnlyONEofcl'                            # @username
+    twitter_site = '@YourOnlyONEofcl'                               # @username
+    wordpress = 'youronlyoneofcl.wordpress.com'                                  # URL
+    youtube = 'YourOnlyONEofcl'                                    # username without @
+
+  [taxonomy]
+    categories = true
+    tags = true
+
+  [toc]
+    level_start = 1
+    level_end = 6
+    list_element = 'ol'
+    list_class = 'upper-latin'
+
+  [verifications]
+    enable = true
+    flattr = '4j1gl5'
+    followit = 'uYZyV7MVARnWg9phNgMQ'
+    #google = ''
+    #microsoft = ''
+    naver = '0212955cb24d6e2c67f92be3c7833cae8a98fa8e'
+    ocs = 'c563648adcfa021a0dfd3d3d8f0be64a'
+    #pinterest = ''
+    wot = '06c7ef6e7986586661ef'
+    #yandex = ''
+
+  ##### BGN: webfonts #####
+    [[webfonts]]
+      enable = true
+      url = 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap'
+    [[webfonts]]
+      enable = true
+      url = 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap'
+    [[webfonts]]
+      enable = true
+      url = 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap'
+    [[webfonts]]
+      enable = true
+      url = 'https://fonts.googleapis.com/css2?family=Noto+Sans+Phoenician&family=Noto+Sans+Hebrew:wght@400;700&display=swap'
+    [[webfonts]]
+      enable = true
+      url = 'https://fonts.googleapis.com/css2?family=Noto+Sans+Tagalog&family=Noto+Sans+Tagbanwa&family=Noto+Sans+Buhid&family=Noto+Sans+Hanunoo&display=swap'
+    [[webfonts]]
+      enable = true
+      url = 'https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;700&display=swap'
+    [[webfonts]]
+      enable = true
+      url = 'https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap'
+    #[[webfonts]]
+    #  enable = true
+    #  url = 'https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap'
+    #[[webfonts]]
+    #  enable = true
+    #  url = 'https://fonts.googleapis.com/css2?family=Honk&display=swap'
+  ##### END: webfonts #####
+
+  [semweb]
+    datecreated = "2017-01-01"
+    isblog = true
+
   #  org = "yelosan"
 
   #  #isni = ""
@@ -98,18 +338,4 @@ googleadsense = "ca-pub-8360283248006398"
   #    #url = ""
   #    #avatar = ""
   #    #rel = "noopener external nofollow"
-
-  #[verify]
-  #  flattr = "4j1gl5"
-  #  naver = "0212955cb24d6e2c67f92be3c7833cae8a98fa8e"
-  #  wot = "06c7ef6e7986586661ef"
-  #  ocs = "c563648adcfa021a0dfd3d3d8f0be64a"
-  #  followit = "uYZyV7MVARnWg9phNgMQ"
-
-  #[analytics]
-  #  counterdev = "youronlyone"
-  #  microanalyticsio = "ZwSg9rf6GA"
-  #  swetrix = "bYdcXUajNvru"
-  #  cfwebanalytics = "07a05e5302d1458da3561ce41791e284"
-  #  microsoftclarity = "63ddi0b99e"
 ### END: Other Settings ###

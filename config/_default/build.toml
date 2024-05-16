@@ -1,5 +1,28 @@
 # See: https://gohugo.io/getting-started/configuration/#configure-build
+# See: https://gohugo.io/getting-started/configuration/#configure-cache-busters
 
 noJSConfigInAssets = true
 useResourceCacheWhen = "fallback"
-writeStats = false
+
+# buildStats ideally under /config/production/
+[buildStats]
+  disableClasses = false
+  disableIDs = false
+  disableTags = false
+  enable = false
+
+[[cachebusters]]
+  source = 'assets/.*\.(js|ts|jsx|tsx)'
+  target = '(js|scripts|javascript)'
+
+[[cachebusters]]
+  source = 'assets/.*\.(css|sass|scss)$'
+  target = '(css|styles|scss|sass)'
+
+[[cachebusters]]
+  source = '(postcss|tailwind)\.config\.js'
+  target = '(css|styles|scss|sass)'
+
+[[cachebusters]]
+  source = 'assets/.*\.(.*)$'
+  target = '$1'

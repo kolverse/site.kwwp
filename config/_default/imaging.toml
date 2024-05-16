@@ -1,9 +1,9 @@
-# See: https://gohugo.io/content-management/image-processing/
+# See: https://gohugo.io/content-management/image-processing/#imaging-configuration
 
 anchor = "Smart"                                  # default: Smart
 bgColor = "#ffffff"                               # default: #ffffff; if transparency is not supported
 hint = "photo"                                    # default: photo; WebP
-quality = 90                                      # default: 75; JPEG and WebP
+quality = 75                                      # default: 75; JPEG and WebP
 resampleFilter = "MitchellNetravali"              # default: Box
 
 [exif]
@@ -11,3 +11,4 @@ resampleFilter = "MitchellNetravali"              # default: Box
   disableLatLong = false                          # default: false
   excludeFields = ""                              # default: ""; performance and cache size
   includeFields = ""                              # default: ""; performance and cache size
+  #includeFields = "Artist|LensModel|FNumber|ExposureTime"

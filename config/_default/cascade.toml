@@ -1,5 +1,7 @@
-images = ["https://rsc.youronly.one/img/y/techmagus-smartphone-1920x1280.webp", "https://rsc.youronly.one/img/y/techmagus-Architetto-Esperiment-chimico.webp"]
-  [_target]
-    kind = "page"
-    #lang = ""
-    #path = "/blog/**"
+# See: https://gohugo.io/content-management/front-matter/#front-matter-cascade
+
+#images = ["https://rsc.youronly.one/img/y/Yuki_flag-300h.webp", "https://rsc.youronly.one/img/y/Yuki_flag-square-300x.webp"]
+#  [_target]
+#    kind = "page"
+#    #lang = ""
+#    #path = "/blog/**"

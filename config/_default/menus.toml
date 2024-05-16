@@ -1,0 +1,7 @@
+# See: https://gohugo.io/content-management/menus/#define-in-site-configuration
+
+###
+##  NOTE:
+##    * per site
+##    * generally empty, we set this in languages.toml on a per language basis
+###

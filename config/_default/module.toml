@@ -1,14 +1,4 @@
-replacements = [
-  "gitlab.com/yelosan/hugo-semantic-web -> /home/yuki/repos/yelosan/hugo-semantic-web",
-  "gitlab.com/yelosan/hugo-shortcodes -> /home/yuki/repos/yelosan/hugo-shortcodes",
-  "gitlab.com/yelosan/hugo-feeds -> /home/yuki/repos/yelosan/hugo-feeds",
-  "github.com/techmagus/maupassant-hugo -> /home/yuki/repos/hugo-themes/kolverse-maupassant-hugo"
-]
-
-[hugoVersion]
-  extended = true
-  #max = ""
-  min = "0.105.0"
+workspace = "off"
 
 [[imports]]
   disable = false                           # default: false
@@ -16,34 +6,27 @@ replacements = [
   ignoreImports = false                     # default: false
   noMounts = false                          # default: false
   noVendor = false                          # default: false
-  path = "gitlab.com/yelosan/hugo-semantic-web"
+  path = "codeberg.org/yelosan/hugo-feeds"
 
 [[imports]]
-  path = "gitlab.com/yelosan/hugo-shortcodes"
+  path = "codeberg.org/yelosan/hugo-syndication"
 
 [[imports]]
-  path = "gitlab.com/yelosan/hugo-feeds"
+  path = "codeberg.org/yelosan/hugo-shortcodes"
 
 [[imports]]
+  path = "codeberg.org/yelosan/hugo-semantic-web"
+
+
+[[imports]]
+  ignoreConfig = true
   path = "github.com/techmagus/maupassant-hugo"
 
-# BGN: // content
-#[[imports]]
-#  path = "github.com/kolverse/{REPO_NAME}"
-#    [[imports.mounts]]
-#      source = "{REPO_NAME}/en"
-#      target = "content"
-#      lang = "en"
-# END: // content
-
-
-#[[imports]]
-#  path = "gitlab.com/youronlyone/images"
-#  # BGN: /techmagus/ images
-#    [[imports.mounts]]
-#      source = "techmagus"
-#      target = "assets/images"
-#  # END: /techmagus/ images
+[[imports]]
+  path = "codeberg.org/kolverse/kwwp-database"
+    [[imports.mounts]]
+      source = "data"
+      target = "assets/data"
 
 
 # See: https://gohugo.io/hugo-modules/configuration/#module-config-mounts
@@ -58,21 +41,8 @@ replacements = [
     target = "assets"
 
   [[mounts]]
-    source = "content/en"
+    source = "content"
     target = "content"
-    lang = "en"                                        # when in multihost / multilang mode
-  #[[mounts]]
-  #  source = "content/en-ph"
-  #  target = "content"
-  #  lang = "en-ph"                                      # when in multihost / multilang mode
-  #[[mounts]]
-  #  source = "content/ja"
-  #  target = "content"
-  #  lang = "ja"                                         # when in multihost / multilang mode
-  #[[mounts]]
-  #  source = "content/ko"
-  #  target = "content"
-  #  lang = "ko"                                         # when in multihost / multilang mode
 
   [[mounts]]
     source = "data"
@@ -87,18 +57,5 @@ replacements = [
     target = "layouts"
 
   [[mounts]]
-    source = "static/en"
+    source = "static"
     target = "static"
-    lang = "en"                                        # when in multihost / multilang mode
-  #[[mounts]]
-  #  source = "static/en-ph"
-  #  target = "static"
-  #  lang = "en-ph"                                      # when in multihost / multilang mode
-  #[[mounts]]
-  #  source = "static/ja"
-  #  target = "static"
-  #  lang = "ja"                                         # when in multihost / multilang mode
-  #[[mounts]]
-  #  source = "static/ko"
-  #  target = "static"
-  #  lang = "ko"                                         # when in multihost / multilang mode

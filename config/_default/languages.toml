@@ -1,150 +1,238 @@
-# See: https://gohugo.io/content-management/multilingual/#configure-languages
+# See:  https://gohugo.io/content-management/multilingual/
+#       https://gohugo.io/methods/site/language/
+#       https://gohugo.io/methods/page/language/
+#_merge = "deep"
 
-[en]
-  languageName = "English"
-  languageCode = "en"
-  #languageCodeCountry = "xx"              # custom
-  languageFlag = "🇬🇧"                     # custom
-  timeZone = "Etc/UTC"
-  #tzOffset = "12h"                        # custom
-  tzAbbr = "UTC"                          # custom
-  tzAbbrTitle = "Universal Time Coordinated"                        # custom
-  weight = 110
+# lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ site.Language.LanguageDirection }}"
+
+### Generic English
+[en]                                                # site.Language.Lang
+  languageCode = "en"                               # site.Language.LanguageCode
+  languageDirection = "ltr"                         # site.Language.LanguageDirection
+  languageName = "English"                          # .Site.Language.LanguageName
+  #languagePrefix = ""                              # site.Language.LanguagePrefix
+  timezone = "Etc/UTC"                              # site.Language.Timezone (??)
+  #title = ""                                       # site.Title (site.Language.Title ??)
+  weight = 100                                      # site.Language.Weight
+  [en.params]                                       # site.Params || site.Params.custom_params
+    #languageCodeCountry = ""                       # custom
+    languageFlag = "🇬🇧"                             # custom
+    tzAbbr = "UTC"                                  # custom
+    tzAbbrTitle = "Universal Time Coordinated"      # custom
+    #tzOffset = "0h"                                # custom
+    #description = ""                               # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
   [[en.menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
-    weight = 2
-  [[en.menu.main]]
-    identifier = "archives"
-    name = "Archives"
-    url = "/archives/"
-    weight = 3
+    name = "YOO Station"
+    identifier = "yoo-hub"
+    url = "https://im.youronly.one/"
+    #pre = "<i class='fa fa-home'></i>"
+    weight = 1000
 
-#[en-ph]
-#  languageName = "English (PH)"
-#  languageCode = "en-PH"
-#  languageCodeCountry = "ph"              # custom
-#  languageFlag = "🇵🇭"                     # custom
-#  timeZone = "Asia/Manila"
-#  tzOffset = "8h"                        # custom
-#  tzAbbr = "ACT"                          # custom
-#  tzAbbrTitle = "Asean Common Time"                        # custom
-#  weight = 111
-#  [[en-ph.menu.main]]
-#    identifier = "about"
-#    name = "About"
-#    url = "/about/"
-#    weight = 2
-#  [[en-ph.menu.main]]
-#    identifier = "archives"
-#    name = "Archives"
-#    url = "/archives/"
-#    weight = 3
-
-#[fil]
-  #languageName = "Filipino"
-  #languageCode = "fil"
-  #languageCodeCountry = "ph"              # custom
-  #languageFlag = "🇵🇭"                     # custom
-  #timeZone = "Asia/Manila"
-  #tzOffset = "8h"                        # custom
-  #tzAbbr = "ACT"                          # custom
-  #tzAbbrTitle = "Asean Common Time"                        # custom
-  #weight = 120
+### Philippine English
+[en-ph]
+  languageCode = "en-ph"
+  languageDirection = "ltr"
+  languageName = "English (PH)"
+  #languagePrefix = ""
+  timezone = "Asia/Manila"
   #title = ""
-  #[fil.params]
-    #description = ""     # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+  weight = 101
+  [en-ph.params]
+    languageCodeCountry = "ph"                      # custom
+    languageFlag = "🇵🇭"                             # custom
+    tzAbbr = "ACT"                                  # custom
+    tzAbbrTitle = "Asean Common Time"               # custom
+    tzOffset = "8h"                                 # custom
+    #description = ""                               # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+  [[en-ph.menu.main]]
+    name = "YOO Station"
+    identifier = "yoo-hub"
+    url = "https://im.youronly.one/"
+    #pre = "<i class='fa fa-home'></i>"
+    weight = 1000
 
-#[tl-tglg]
-  #languageName = "Tagalog Baybayin"
-  #languageCode = "tl-Tglg"
-  #languageCodeCountry = "ph"              # custom
-  #languageFlag = "🇵🇭"                     # custom
-  #timeZone = "Asia/Manila"
-  #tzOffset = "8h"                        # custom
-  #tzAbbr = "ACT"                          # custom
-  #tzAbbrTitle = "Asean Common Time"                        # custom
+### Filipino (ᜉᜒᜎᜒᜉᜒᜈᜓ) in Latin (ᜎᜆᜒᜈ᜕)
+[fil]
+  languageCode = "fil"
+  languageDirection = "ltr"
+  languageName = "Filipino"
+  #languagePrefix = ""
+  timezone = "Asia/Manila"
   #title = ""
-  #[tl.tglg.params]
-    #description = ""     # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+  weight = 200
+  [fil.params]
+    languageCodeCountry = "ph"                      # custom
+    languageFlag = "🇵🇭"                             # custom
+    tzAbbr = "ACT"                                  # custom
+    tzAbbrTitle = "Asean Common Time"               # custom
+    tzOffset = "8h"                                 # custom
+    #description = ""                               # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+  [[fil.menu.main]]
+    name = "Himpilang YOO"
+    identifier = "yoo-hub"
+    url = "https://im.youronly.one/"
+    #pre = "<i class='fa fa-home'></i>"
+    weight = 1000
 
-#[zh-hant]
-  #languageName = "中文（繁體）"
-  #languageCode = "zh-Hant"
-  #languageCodeCountry = "cn"              # custom
-  #languageFlag = "🇨🇳"                     # custom
-  #timeZone = "Asia/Shanghai"
-  #tzOffset = "8h"                        # custom
-  #tzAbbr = "CST"                          # custom
-  #tzAbbrTitle = "China Standard Time"                        # custom
-  #weight = 130
+### Filipino (ᜉᜒᜎᜒᜉᜒᜈᜓ) in Hangeul (한글)
+[fil-hang]
+  languageCode = "fil-hang"
+  languageDirection = "ltr"
+  languageName = "필리핀 한글"
+  #languagePrefix = ""
+  timezone = "Asia/Manila"
   #title = ""
-  #[zh-hant.params]
-    #description = ""     # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+  weight = 210
+  [fil-hang.params]
+    languageCodeCountry = "ph"                      # custom
+    languageFlag = "🇵🇭"                             # custom
+    tzAbbr = "ACT"                                  # custom
+    tzAbbrTitle = "Asean Common Time"               # custom
+    tzOffset = "8h"                                 # custom
+    #description = ""                               # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+  [[fil-hang.menu.main]]
+    name = "힘필랑 YOO"
+    identifier = "yoo-hub"
+    url = "https://im.youronly.one/"
+    #pre = "<i class='fa fa-home'></i>"
+    weight = 1000
 
-#[zh-hans]
-#  languageName = "中文（简体）"
-#  languageCode = "zh-Hans"
-#  languageCodeCountry = "cn"              # custom
-#  languageFlag = "🇨🇳"                     # custom
-#  timeZone = "Asia/Shanghai"
-#  tzOffset = "8h"                        # custom
-#  tzAbbr = "CST"                          # custom
-#  tzAbbrTitle = "China Standard Time"                        # custom
-#  weight = 131
-#  #title = ""
-#  [[zh-hans.menu.main]]
-#    identifier = "about"
-#    name = "关于"
-#    url = "/about/"
-#    weight = 2
-#  [[zh-hans.menu.main]]
-#    identifier = "archives"
-#    name = "归档"
-#    url = "/archives/"
-#    weight = 3
+### Tagalog (ᜆᜄᜎᜓᜄ᜕) in Baybayin (ᜊᜌ᜔ᜊᜌᜒᜈ᜕)
+[tl-tglg]
+  languageCode = "tl-tglg"
+  languageDirection = "ltr"
+  languageName = "ᜊᜌ᜔ᜊᜌᜒᜈ᜔ ᜆᜄᜎᜓᜄ᜕"
+  #languagePrefix = ""
+  timezone = "Asia/Manila"
+  #title = ""
+  weight = 300
+  [tl-tglg.params]
+    languageCodeCountry = "ph"                      # custom
+    languageFlag = "🇵🇭"                             # custom
+    tzAbbr = "ACT"                                  # custom
+    tzAbbrTitle = "Asean Common Time"               # custom
+    tzOffset = "8h"                                 # custom
+    #description = ""                               # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+  [[tl-tglg.menu.main]]
+    name = "ᜑᜒᜋ᜔ᜉᜒᜎᜅ᜕ YOO"
+    identifier = "yoo-hub"
+    url = "https://im.youronly.one/"
+    #pre = "<i class='fa fa-home'></i>"
+    weight = 1000
 
-#[ja]
-#  languageName = "日本語"
-#  languageCode = "ja"
-#  languageCodeCountry = "jp"              # custom
-#  languageFlag = "🇯🇵"                     # custom
-#  timeZone = "Asia/Tokyo"
-#  tzOffset = "9h"                        # custom
-#  tzAbbr = "JST"                          # custom
-#  tzAbbrTitle = "Japan Standard Time"                        # custom
-#  weight = 140
-#  title = "ハイテク マギ 🚀"
-#  [[ja.menu.main]]
-#    name              = "ホーム"
-#    identifier        = "home"
-#    url               = "/"
-#    pre               = "home"
-#    weight            = 1
-#    [ja.menu.main.params]
-#      newTab = false
-#  [ja.params]
-#    description = "科学技術の遊び場"     # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+### Hànyǔ (漢語) in Traditional Hànzì (漢字)
+[zh-hant]
+  languageCode = "zh-hant"
+  languageDirection = "ltr"
+  languageName = "中文（繁體）"
+  #languagePrefix = ""
+  timezone = "Asia/Shanghai"
+  #title = ""
+  weight = 400
+  [zh-hant.params]
+    languageCodeCountry = "cn"                      # custom
+    languageFlag = "🇨🇳"                             # custom
+    tzAbbr = "CST"                                  # custom
+    tzAbbrTitle = "China Standard Time"             # custom
+    tzOffset = "8h"                                 # custom
+    #description = ""                               # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+  [[zh-hant.menu.main]]
+    name = "YOO車站"
+    identifier = "yoo-hub"
+    url = "https://im.youronly.one/"
+    #pre = "<i class='fa fa-home'></i>"
+    weight = 1000
 
-#[ko]
-#  languageName = "한국어"
-#  languageCode = "ko"
-#  languageCodeCountry = "kr"              # custom
-#  languageFlag = "🇰🇷"                     # custom
-#  timeZone = "Asia/Seoul"
-#  tzOffset = "9h"                        # custom
-#  tzAbbr = "KST"                          # custom
-#  tzAbbrTitle = "Korea Standard Time"                        # custom
-#  weight = 150
-#  title = "테크 마구스 🚀"
-#  [[ko.menu.main]]
-#    identifier = "about"
-#    name = "About"
-#    url = "/about/"
-#    weight = 2
-#  [[ko.menu.main]]
-#    identifier = "archives"
-#    name = "Archives"
-#    url = "/archives/"
-#    weight = 3
+### Hànyǔ (汉语) in Simplified Hànzì (汉字)
+[zh-hans]
+  languageCode = "zh-hans"
+  languageDirection = "ltr"
+  languageName = "中文（简体）"
+  #languagePrefix = ""
+  timezone = "Asia/Shanghai"
+  #title = ""
+  weight = 401
+  [zh-hans.params]
+    languageCodeCountry = "cn"                      # custom
+    languageFlag = "🇨🇳"                             # custom
+    tzAbbr = "CST"                                  # custom
+    tzAbbrTitle = "China Standard Time"             # custom
+    tzOffset = "8h"                                 # custom
+    #description = ""                               # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+  [[zh-hans.menu.main]]
+    name = "YOO车站"
+    identifier = "yoo-hub"
+    url = "https://im.youronly.one/"
+    #pre = "<i class='fa fa-home'></i>"
+    weight = 1000
+
+### Hànyǔ (漢語) in Bopomofo (ㄅㄆㄇㄈ) / Zhuyin (注音 / 注音符號)
+[zh-bopo]
+  languageCode = "zh-bopo"
+  languageDirection = "ltr"
+  languageName = "Bopomofo（ㄅㄆㄇㄈ）"
+  #languagePrefix = ""
+  timezone = "Asia/Shanghai"
+  #title = ""
+  weight = 402
+  [zh-bopo.params]
+    languageCodeCountry = "cn"                      # custom
+    languageFlag = "🇨🇳"                             # custom
+    tzAbbr = "CST"                                  # custom
+    tzAbbrTitle = "China Standard Time"             # custom
+    tzOffset = "8h"                                 # custom
+    #description = ""                               # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+  [[zh-bopo.menu.main]]
+    name = "YOO車站"
+    identifier = "yoo-hub"
+    url = "https://im.youronly.one/"
+    #pre = "<i class='fa fa-home'></i>"
+    weight = 1000
+
+### Nihongo (日本語 (にほんご)) in Kana (仮名 (かな))
+[ja]
+  languageCode = "ja"
+  languageDirection = "ltr"
+  languageName = "日本語"
+  #languagePrefix = ""
+  timezone = "Asia/Tokyo"
+  #title = ""
+  weight = 500
+  [ja.params]
+    languageCodeCountry = "jp"                      # custom
+    languageFlag = "🇯🇵"                             # custom
+    tzAbbr = "JST"                                  # custom
+    tzAbbrTitle = "Japan Standard Time"             # custom
+    tzOffset = "9h"                                 # custom
+    #description = ""                               # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+  [[ja.menu.main]]
+    name = "YOOステーション"
+    identifier = "yoo-hub"
+    url = "https://im.youronly.one/"
+    #pre = "<i class='fa fa-home'></i>"
+    weight = 1000
+
+### Hangugeo (한국어) in Hangeul (한글)
+[ko]
+  languageCode = "ko"
+  languageDirection = "ltr"
+  languageName = "한국어"
+  #languagePrefix = ""
+  timezone = "Asia/Seoul"
+  #title = ""
+  weight = 600
+  [ko.params]
+    languageCodeCountry = "kr"                      # custom
+    languageFlag = "🇰🇷"                             # custom
+    tzAbbr = "KST"                                  # custom
+    tzAbbrTitle = "Korea Standard Time"             # custom
+    tzOffset = "9h"                                 # custom
+    #description = ""                               # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+  [[ko.menu.main]]
+    name = "YOO 스테이션"
+    identifier = "yoo-hub"
+    url = "https://im.youronly.one/"
+    #pre = "<i class='fa fa-home'></i>"
+    weight = 1000
+
+###

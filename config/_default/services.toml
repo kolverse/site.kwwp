@@ -1,6 +1,17 @@
+# See: https://gohugo.io/methods/site/config/#services
+
+[disqus]
+  shortname = "youronlyone"
+
+[googleAnalytics]
+  #id = "G-XXXXXXXXX"
+
 [instagram]
-  AccessToken = "183794425326191|5734e2f164e94e3247f0f1499061c7b7"
+  #accessToken = "183794425326191|5734e2f164e94e3247f0f1499061c7b7"
   disableInlineCSS = true
+
+[rss]
+  #limit = -1
 
 [twitter]
   disableInlineCSS = true

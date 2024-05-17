@@ -1,5 +1,5 @@
 +++
-title = "Verses"
+title = "Places"
 #description = ""
 
 #lastmod = {{ .Date }}                 # last update; manually adjust to local timezone
@@ -10,7 +10,7 @@ title = "Verses"
 #aliases = [""]                                        # "/post"
 #url = ""                                              # "path/post"; override .Permalink
 #slug = ""
-translationKey = "01-verses"
+translationKey = "03-places"
 #relCanonical = "https://kwwp.youronly.one/"
 #disqus_url = ""                                       # not used in sites by Yelosan Publishing
 #disquq_identifier = ""                                # set if date of this content is different from main translation

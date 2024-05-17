@@ -1,32 +1,10 @@
-{{ .EnableAllLanguages }}
-
-{{/* Get remote data. */}}
-{{ $data := dict }}
-{{ $path := "data/verses/reality01.json" }}
-{{ with resources.Get $path }}
-  {{ with . | transform.Unmarshal }}
-    {{ $data = . }}
-  {{ end }}
-{{ else }}
-  {{ errorf "Unable to get global resource %q" $path }}
-{{ end }}
-
-{{/* Add pages and page resources. */}}
-{{ range $data }}
-
-  {{/* Add page. */}}
-  {{ $content := dict "mediaType" "text/markdown" "value" .description.short }}
-  {{ $dates := dict "date" (time.AsTime .date.created) }}
-  {{ $params := dict "author" .author.main "ksid" .identification.ksid }}
+{{ range $firstLevel, $_ := site.Data.verses }}
   {{ $page := dict
-    "content" $content
-    "dates" $dates
     "kind" "page"
-    "params" $params
-    "path" .identification.name
-    "title" .identification.name
+    "params" .
+    "path" $firstLevel
+    "title" ($firstLevel | humanize)
+    "menus" "main"
   }}
   {{ $.AddPage $page }}
-
 {{ end }}
-

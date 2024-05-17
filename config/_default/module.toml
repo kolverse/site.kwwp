@@ -17,16 +17,15 @@ workspace = "off"
 [[imports]]
   path = "codeberg.org/yelosan/hugo-semantic-web"
 
+[[imports]]
+  path = "codeberg.org/kolverse/kwwp-database"
+#    [[imports.mounts]]
+#      source = "data"
+#      target = "data"
 
 [[imports]]
   ignoreConfig = true
-  path = "github.com/techmagus/maupassant-hugo"
-
-[[imports]]
-  path = "codeberg.org/kolverse/kwwp-database"
-    [[imports.mounts]]
-      source = "data"
-      target = "assets/data"
+  path = "github.com/techmagus/beautifulhugo"
 
 
 # See: https://gohugo.io/hugo-modules/configuration/#module-config-mounts

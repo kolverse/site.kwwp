@@ -7,6 +7,6 @@ require (
   codeberg.org/yelosan/hugo-syndication main
   codeberg.org/yelosan/hugo-shortcodes main
   codeberg.org/yelosan/hugo-semantic-web main
-  github.com/techmagus/maupassant-hugo main
   codeberg.org/kolverse/kwwp-database main
+  github.com/techmagus/beautifulhugo main
 )

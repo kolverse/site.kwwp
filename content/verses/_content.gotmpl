@@ -1,10 +1,36 @@
 {{ .EnableAllLanguages }}
 {{ range $firstLevel, $_ := site.Data.verses }}
+  {{ $content := "" }}
+  {{ $dates := "" }}
+  {{ $params := "" }}
+  {{ range $_, $v := $_ }}
+    {{ $content = dict
+      "mediaType" .MediaType.Type
+      "value" .content
+    }}
+    {{ $dates = dict
+      "lastmod" (time.AsTime .dates.updated)
+      "publishDate" (time.AsTime .dates.published)
+      "date" (time.AsTime .dates.created)
+      "expiryDate" (time.AsTime .dates.expiry)
+    }}
+    {{ $params = dict
+      "authors_main" .authors.main
+      "authors_more" .authors.more
+      "description_long" .descriptions.long
+      "description_short" .descriptions.short
+      "alias" .identifications.alias
+      "ksid" .identifications.ksid
+      "title" .identifications.name
+    }}
+  {{ end }}
   {{ $page := dict
+    "content" $content
+    "dates" $dates
     "kind" "page"
-    "params" .
+    "params" $params
     "path" $firstLevel
-    "title" ($firstLevel | humanize)
+    "title" $params.title
     "menus" "main"
   }}
   {{ $.AddPage $page }}

@@ -7,12 +7,13 @@
 #   - publishdate comes first (see below) as it will affect the following:
 #     - permalink date
 #     - position of article (majority of themes were designed for 'date' and not 'publishdate')
+#     - unless we edit the entire theme to use publishdate for its links and sorting
 # publishdate: first date of publication
 # lastmod: latest significant update
 #   - do not change for minor updates, the article and/or site might get flagged by search engines
 # expirydate: when the article is no longer relevant
 
-date = ["publishdate", "pubdate", "published", "date", "lastmod", "modified"]                             # :default = ["date", "publishDate", "pubdate", "published", "lastmod", "modified"]
+date = ["date", "publishdate", "pubdate", "published", "lastmod", "modified"]                             # :default = ["date", "publishDate", "pubdate", "published", "lastmod", "modified"]
 expirydate = ["expirydate", "unpublishdate"]                                           # :default = ["expiryDate", "unpublishdate"]
 lastmod = ["lastmod", "modified", ":git", ":fileModTime", "publishdate", "pubdate", "published", "date"]  # :default = [":git", "lastmod", "modified", "date", "publishDate", "pubdate", "published"]
 publishdate = ["publishdate", "pubdate", "published", "date"]                                 # :default = ["publishDate", "date"]

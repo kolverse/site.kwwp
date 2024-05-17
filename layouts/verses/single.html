@@ -1,17 +1,38 @@
 {{ define "main" }}
   {{ .Content }}
 
+{{ range $k, $_ := site.Data.verses }}
+  {{ $dates := "" }}
+  {{ $name := "" }}
+  {{ range $_, $v := $_ }}
+    {{ $dates = dict
+      "lastmod" (time.AsTime .dates.updated)
+      "publishDate" (time.AsTime .dates.published)
+      "date" (time.AsTime .dates.created)
+      "expiryDate" (time.AsTime .dates.expiry)
+    }}
+    {{ $name = dict
+      "title" .identifications.name
+    }}
+  {{ end }}
+{{ end }}
+
+title: {{ .Title }}<br>
+
+<hr>
+
   <ul>
-    <li>Created by: {{ .Params.authors.main }}</li>
-    <li>Additional authors: {{ .Params.authors.others }}</li>
-    <li>Created on: {{ .Params.dates.created }}</li>
-    <li>Published on: {{ .Params.dates.published }}</li>
-    <li>Last updated: {{ .Params.dates.updated }}</li>
-    <li>Short description: {{ .Params.descriptions.short }}</li>
-    <li>Long description: {{ .Params.descriptions.long }}</li>
-    <li>Aliases: {{ .Params.identifications.alias }}</li>
-    <li>KSID: {{ .Params.identifications.ksid }}</li>
-    <li>Name: {{ .Params.identifications.name }}</li>
+    <li>Created by: {{ .Params.authors_main }}</li>
+    <li>Additional authors: {{ .Params.authors_more }}</li>
+    <li>Created on: {{ .Date }}</li>
+    <li>Published on: {{ .PublishDate }}</li>
+    <li>Last updated: {{ .Lastmod }}</li>
+    <li>Expiration: {{ .ExpiryDate }}</li>
+    <li>Short description: {{ .Params.description_short }}</li>
+    <li>Long description: {{ .Params.description_long }}</li>
+    <li>Aliases: {{ .Params.alias }}</li>
+    <li>KSID: {{ .Params.ksid }}</li>
+    <li>Name: {{ .Title }}</li>
   </ul>
 
   {{- /*

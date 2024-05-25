@@ -75,22 +75,22 @@
     weight = 1000
 
 ### Filipino (ᜉᜒᜎᜒᜉᜒᜈᜓ) in Hangeul (한글)
-[fil-hang]
-  languageCode = "fil-hang"
+[phi-hang]
+  languageCode = "phi-hang"
   languageDirection = "ltr"
-  languageName = "필리핀 한글"
+  languageName = "삐ᄙᅵ삐너 한글"
   #languagePrefix = ""
   timezone = "Asia/Manila"
   #title = ""
-  weight = 210
-  [fil-hang.params]
+  weight = 300
+  [phi-hang.params]
     languageCodeCountry = "ph"                      # custom
     languageFlag = "🇵🇭"                             # custom
     tzAbbr = "ACT"                                  # custom
     tzAbbrTitle = "Asean Common Time"               # custom
     tzOffset = "8h"                                 # custom
     #description = ""                               # IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
-  [[fil-hang.menu.main]]
+  [[phi-hang.menu.main]]
     name = "힘필랑 YOO"
     identifier = "yoo-hub"
     url = "https://im.youronly.one/"
@@ -105,7 +105,7 @@
   #languagePrefix = ""
   timezone = "Asia/Manila"
   #title = ""
-  weight = 300
+  weight = 400
   [tl-tglg.params]
     languageCodeCountry = "ph"                      # custom
     languageFlag = "🇵🇭"                             # custom
@@ -128,7 +128,7 @@
   #languagePrefix = ""
   timezone = "Asia/Shanghai"
   #title = ""
-  weight = 400
+  weight = 500
   [zh-hant.params]
     languageCodeCountry = "cn"                      # custom
     languageFlag = "🇨🇳"                             # custom
@@ -151,7 +151,7 @@
   #languagePrefix = ""
   timezone = "Asia/Shanghai"
   #title = ""
-  weight = 401
+  weight = 501
   [zh-hans.params]
     languageCodeCountry = "cn"                      # custom
     languageFlag = "🇨🇳"                             # custom
@@ -174,7 +174,7 @@
   #languagePrefix = ""
   timezone = "Asia/Shanghai"
   #title = ""
-  weight = 402
+  weight = 502
   [zh-bopo.params]
     languageCodeCountry = "cn"                      # custom
     languageFlag = "🇨🇳"                             # custom
@@ -197,7 +197,7 @@
   #languagePrefix = ""
   timezone = "Asia/Tokyo"
   #title = ""
-  weight = 500
+  weight = 600
   [ja.params]
     languageCodeCountry = "jp"                      # custom
     languageFlag = "🇯🇵"                             # custom
@@ -220,7 +220,7 @@
   #languagePrefix = ""
   timezone = "Asia/Seoul"
   #title = ""
-  weight = 600
+  weight = 700
   [ko.params]
     languageCodeCountry = "kr"                      # custom
     languageFlag = "🇰🇷"                             # custom
